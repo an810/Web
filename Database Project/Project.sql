@@ -204,10 +204,11 @@ select * from genProductOrder;
 
 -- View genOrder
 create view genOrder as
-select O.orderID, C.customer_name, O.date, PO.total, O.status
+select O.orderID, C.customer_name, O.date, sum(PO.total) as total, O.status
 from orders O 
 join genProductOrder PO on O.orderID = PO.orderID
-join customers C on O.customerID = C.customerID;
+join customers C on O.customerID = C.customerID
+group by O.orderID;
 
 select * from genOrder;
 drop view genOrder;
