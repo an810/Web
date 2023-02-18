@@ -160,6 +160,8 @@ INSERT INTO `project`.`orders` (`orderID`, `customerID`, `date`, `status`) VALUE
 INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD001', 'DR001', '30');
 INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD001', 'DR002', '20');
 INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD002', 'FD002', '10');
+INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD002', 'FD010', '10');
+INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD003', 'FD004', '10');
 INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD003', 'FD003', '20');
 INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD004', 'DR006', '50');
 INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD005', 'DR009', '15');
