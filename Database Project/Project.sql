@@ -185,11 +185,11 @@ select * from genInventory;
 
 -- View genProductOrder
 
-create view genProductOrder as
-select OD.orderID, group_concat(P.name separator ', ') as products, P.price_out, OD.quantity, sum(OD.quantity*P.price_out) as total
-from orderdetail OD
-join products P on OD.productID = P.productID
-group by OD.orderID;
+-- create view genProductOrder as
+-- select OD.orderID, group_concat(P.name separator ', ') as products, P.price_out, OD.quantity, sum(OD.quantity*P.price_out) as total
+-- from orderdetail OD
+-- join products P on OD.productID = P.productID
+-- group by OD.orderID;
 
 create view genProductOrder as
 select OD.orderID, P.name, P.price_out, OD.quantity, sum(OD.quantity*P.price_out) as total
