@@ -84,16 +84,16 @@ INSERT INTO `project`.`providers` (`providerID`, `provider_name`, `phone_number`
 INSERT INTO `project`.`providers` (`providerID`, `provider_name`, `phone_number`, `address`) VALUES ('PR008', 'Cookie', '0353-888-008', 'Bac Ninh');
 
 -- customer
-INSERT INTO `project`.`customers` (`customerID`, `customer_name`, `phone_number`, `address`, `total_money_ordered`, `ranking`) VALUES ('CS001', 'Do Hong Hai', '0353-999-001', 'Hai Ba Trung, Ha Noi', '2900000', 'Bronze');
-INSERT INTO `project`.`customers` (`customerID`, `customer_name`, `phone_number`, `address`, `total_money_ordered`, `ranking`) VALUES ('CS002', 'Tran Anh', '0353-999-002', 'Hai Ba Trung, Ha Noi', '8000000', 'Silver');
-INSERT INTO `project`.`customers` (`customerID`, `customer_name`, `phone_number`, `address`, `total_money_ordered`, `ranking`) VALUES ('CS003', 'Tran Thuy Chau', '0353-999-003', 'Thanh Xuan, Ha Noi', '5000000', 'Silver');
-INSERT INTO `project`.`customers` (`customerID`, `customer_name`, `phone_number`, `address`, `total_money_ordered`, `ranking`) VALUES ('CS004', 'Doan Anh Khoa', '0353-999-004', 'Hoang Mai, Ha Noi', '6000000', 'Silver');
-INSERT INTO `project`.`customers` (`customerID`, `customer_name`, `phone_number`, `address`, `total_money_ordered`, `ranking`) VALUES ('CS005', 'Nguyen Cong Duy', '0353-999-005', 'Hoang Mai, Ha Noi', '5500000', 'Silver');
-INSERT INTO `project`.`customers` (`customerID`, `customer_name`, `phone_number`, `address`, `total_money_ordered`, `ranking`) VALUES ('CS006', 'Vu Duc Minh', '0353-999-006', 'Thanh Xuan, Ha Noi', '4000000', 'Bronze');
-INSERT INTO `project`.`customers` (`customerID`, `customer_name`, `phone_number`, `address`, `total_money_ordered`, `ranking`) VALUES ('CS007', 'Pham Quang Huy', '0353-999-007', 'Ha Dong, Ha Noi', '2500000', 'Bronze');
-INSERT INTO `project`.`customers` (`customerID`, `customer_name`, `phone_number`, `address`, `total_money_ordered`, `ranking`) VALUES ('CS008', 'Do Van Cuong', '0353-999-008', 'Dong Da, Ha Noi', '1000000', 'Gold');
-INSERT INTO `project`.`customers` (`customerID`, `customer_name`, `phone_number`, `address`, `total_money_ordered`, `ranking`) VALUES ('CS009', 'Bui Xuan Dieu', '0353-999-009', 'Hoan Kiem, Ha Noi', '4500000', 'Bronze');
-INSERT INTO `project`.`customers` (`customerID`, `customer_name`, `phone_number`, `address`, `total_money_ordered`, `ranking`) VALUES ('CS010', 'Nguyen Van Hanh', '0353-999-010', 'Tay Ho, Ha Noi', '900000', 'Bronze');
+INSERT INTO `project`.`customers` (`customerID`, `customer_name`, `email`, `phone_number`, `address`, `total_money_ordered`, `ranking`) VALUES ('CS001', 'Do Hong Hai', 'haidh@gmail.com', '0353-999-001', 'Hai Ba Trung, Ha Noi', '2900000', 'Bronze');
+INSERT INTO `project`.`customers` (`customerID`, `customer_name`, `email`, `phone_number`, `address`, `total_money_ordered`, `ranking`) VALUES ('CS002', 'Tran Anh', 'anht@gmail.com', '0353-999-002', 'Hai Ba Trung, Ha Noi', '8000000', 'Silver');
+INSERT INTO `project`.`customers` (`customerID`, `customer_name`, `email`, `phone_number`, `address`, `total_money_ordered`, `ranking`) VALUES ('CS003', 'Tran Thuy Chau', 'chautt@gmail.com', '0353-999-003', 'Thanh Xuan, Ha Noi', '5000000', 'Silver');
+INSERT INTO `project`.`customers` (`customerID`, `customer_name`, `email`, `phone_number`, `address`, `total_money_ordered`, `ranking`) VALUES ('CS004', 'Doan Anh Khoa', 'khoada@gmail.com', '0353-999-004', 'Hoang Mai, Ha Noi', '6000000', 'Silver');
+INSERT INTO `project`.`customers` (`customerID`, `customer_name`, `email`, `phone_number`, `address`, `total_money_ordered`, `ranking`) VALUES ('CS005', 'Nguyen Cong Duy', 'duync@gmail.com', '0353-999-005', 'Hoang Mai, Ha Noi', '5500000', 'Silver');
+INSERT INTO `project`.`customers` (`customerID`, `customer_name`, `email`, `phone_number`, `address`, `total_money_ordered`, `ranking`) VALUES ('CS006', 'Vu Duc Minh', 'minhvd@gmail.com', '0353-999-006', 'Thanh Xuan, Ha Noi', '4000000', 'Bronze');
+INSERT INTO `project`.`customers` (`customerID`, `customer_name`, `email`, `phone_number`, `address`, `total_money_ordered`, `ranking`) VALUES ('CS007', 'Pham Quang Huy', 'huypq@gmail.com', '0353-999-007', 'Ha Dong, Ha Noi', '2500000', 'Bronze');
+INSERT INTO `project`.`customers` (`customerID`, `customer_name`, `email`, `phone_number`, `address`, `total_money_ordered`, `ranking`) VALUES ('CS008', 'Do Van Cuong', 'cuongdv@gmail.com', '0353-999-008', 'Dong Da, Ha Noi', '1000000', 'Gold');
+INSERT INTO `project`.`customers` (`customerID`, `customer_name`, `email`, `phone_number`, `address`, `total_money_ordered`, `ranking`) VALUES ('CS009', 'Bui Xuan Dieu', 'dieubx@gmail.com', '0353-999-009', 'Hoan Kiem, Ha Noi', '4500000', 'Bronze');
+INSERT INTO `project`.`customers` (`customerID`, `customer_name`, `email`, `phone_number`, `address`, `total_money_ordered`, `ranking`) VALUES ('CS010', 'Nguyen Van Hanh', 'hanhnv@gmail.com', '0353-999-010', 'Tay Ho, Ha Noi', '900000', 'Bronze');
 
 -- products
 INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('DR001', 'Lavie', '4500', '6000', '900', '150');
