@@ -22,7 +22,7 @@ create table products (
 	quantity int not null,
 	constraint product_pk primary key(productID));
 
-create table importDetail (
+create table importdetail (
 	importID varchar(5) not null,
 	productID varchar(5) not null,
 	quantity int not null,
@@ -33,6 +33,7 @@ create table importDetail (
 create table customers (
 	customerID varchar(5) not null,
 	customer_name varchar(30) not null,
+    email varchar(30) not null,
 	phone_number varchar(12) not null,
 	address varchar(50) not null,
 	total_money_ordered int not null,
@@ -47,7 +48,7 @@ create table orders (
 	constraint order_pk1 primary key (orderID),
 	constraint cutomer_fk1 foreign key (customerID) references customers(customerID));
     
-create table OrderDetail (
+create table orderdetail (
 	orderID varchar(5) not null,
 	productID varchar(5) not null,
 	quantity int not null,
@@ -55,7 +56,7 @@ create table OrderDetail (
 	constraint cutomer_fk2 foreign key (orderID) references orders(orderID),
 	constraint product_fk2 foreign key (productID) references products(productID));
 
-create table Cart (
+create table cart (
 	customerID varchar(5) not null,
 	productID varchar(5) not null,
 	quantity int not null,
@@ -156,7 +157,7 @@ INSERT INTO `project`.`orders` (`orderID`, `customerID`, `date`, `status`) VALUE
 INSERT INTO `project`.`orders` (`orderID`, `customerID`, `date`, `status`) VALUES ('OD009', 'CS009', '2023-02-16', 'Pending');
 INSERT INTO `project`.`orders` (`orderID`, `customerID`, `date`, `status`) VALUES ('OD010', 'CS010', '2023-02-10', 'Resolved');
 
--- Order detail
+-- order detail
 INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD001', 'DR001', '30');
 INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD001', 'DR002', '20');
 INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD002', 'FD002', '10');
@@ -170,7 +171,7 @@ INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES 
 INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD009', 'FD003', '20');
 INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD010', 'DR004', '20');
 
--- Cart
+-- cart
 INSERT INTO `project`.`cart` (`customerID`, `productID`, `quantity`) VALUES ('CS001', 'FD001', '10');
 INSERT INTO `project`.`cart` (`customerID`, `productID`, `quantity`) VALUES ('CS002', 'DR001', '20');
 INSERT INTO `project`.`cart` (`customerID`, `productID`, `quantity`) VALUES ('CS003', 'FD010', '10');
@@ -185,33 +186,33 @@ select * from products;
 
 select * from genInventory;
 
--- View genProductOrder
+-- View genProductorder
 
--- create view genProductOrder as
+-- create view genProductorder as
 -- select OD.orderID, group_concat(P.name separator ', ') as products, P.price_out, OD.quantity, sum(OD.quantity*P.price_out) as total
 -- from orderdetail OD
 -- join products P on OD.productID = P.productID
 -- group by OD.orderID;
 
-create view genProductOrder as
+create view genProductorder as
 select OD.orderID, P.name, P.price_out, OD.quantity, sum(OD.quantity*P.price_out) as total
 from orderdetail OD
 join products P on OD.productID = P.productID
 group by OD.orderID, P.productID;
 
-drop view genProductOrder;
-select * from genProductOrder;
+drop view genProductorder;
+select * from genProductorder;
 
--- View genOrder
-create view genOrder as
+-- View genorder
+create view genorder as
 select O.orderID, C.customer_name, O.date, sum(PO.total) as total, O.status
 from orders O 
-join genProductOrder PO on O.orderID = PO.orderID
+join genProductorder PO on O.orderID = PO.orderID
 join customers C on O.customerID = C.customerID
 group by O.orderID;
 
-select * from genOrder;
-drop view genOrder;
+select * from genorder;
+drop view genorder;
 -- View genCustomer
 create view genCustomer as
 select customerID, customer_name, address, phone_number, ranking
@@ -226,4 +227,16 @@ select providerID, provider_name, address, phone_number
 from providers;
 
 select * from genProvider;
-
+-- trigger
+CREATE TRIGGER set_customer_rank
+AFTER INSERT ON customers
+FOR EACH ROW
+BEGIN
+    UPDATE customers SET ranking =
+        CASE
+            WHEN NEW.total_money_ordered >= 10000000 THEN 'Gold'
+            WHEN NEW.total_money_ordered >= 5000000 THEN 'Silver'
+            ELSE 'Bronze'
+        END
+    WHERE customerID = NEW.customerID
+END;
