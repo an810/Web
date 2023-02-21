@@ -308,11 +308,11 @@ BEGIN
     DELETE FROM orders WHERE orderID = @order_id;
     DELETE FROM orderdetail WHERE orderID = @order_id AND productID = @product_id AND quantity = @quantity;
 END;
-|
-DELIMITER ;
+| DELIMITER ;
 
 
 drop trigger check_product_quantity;
+drop trigger delete_order;
 INSERT INTO `project`.`orders` (`orderID`, `customerID`, `date`, `status`) VALUES ('OD011', 'CS010', '2023-02-11', 'Pending');
 DELETE FROM `project`.`orders` WHERE (`orderID` = 'OD011');
 INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD011', 'DR001', '300');
