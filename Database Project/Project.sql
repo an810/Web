@@ -265,12 +265,17 @@ INSERT INTO `project`.`import` (`importID`, `providerID`, `date`) VALUES ('IM013
 INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUES ('IM013', 'FD010', '900');
 
 -- Trigger check product quantity when order
+CREATE TRIGGER update_order_quantity
+BEFORE INSERT ON orderdetail
+
+
 CREATE TRIGGER update_quantity_order
-AFTER INSERT ON orderdetail
-FOR EACH ROW
-AS DECLARE @current_quantity = products.quantity
+ON products
+FOR UPDATE
+AS DECLARE @order_quantity
+SELECT @order_quantity = quantity FROM products
 BEGIN
-	IF NEW.quantity < @current_quantity
+	IF (NEW.quantity < @current_quantity)
     THEN
 		UPDATE products
         SET quantity = quantity - NEW.quantity
