@@ -252,3 +252,28 @@ UPDATE `project`.`customers` SET `total_money_ordered` = '12000000' WHERE (`cust
 INSERT INTO `project`.`customers` (`customerID`, `customer_name`, `email`, `phone_number`, `address`, `total_money_ordered`) VALUES ('CS011', 'ABC', 'abc@gmail.com', '0353-999-011', 'Hoan Kiem, Ha Noi', '6000000');
 INSERT INTO `project`.`customers` (`customerID`, `customer_name`, `email`, `phone_number`, `address`, `total_money_ordered`) VALUES ('CS012', 'AC', 'ac@gmail.com', '0353-999-012', 'Hoan Kiem, Ha Noi', '12000000');
 drop trigger set_customer_rank;
+
+-- Trigger update quantity when import 
+CREATE TRIGGER update_quantity_product
+AFTER INSERT ON importdetail 
+FOR EACH ROW
+	UPDATE products
+	SET quantity = quantity + NEW.quantity
+	WHERE productID = NEW.productID;
+
+INSERT INTO `project`.`import` (`importID`, `providerID`, `date`) VALUES ('IM013', 'PR007', '2022-10-16');
+INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUES ('IM013', 'FD010', '900');
+
+-- Trigger check product quantity when order
+CREATE TRIGGER update_quantity_order
+AFTER INSERT ON orderdetail
+FOR EACH ROW
+AS DECLARE @current_quantity = products.quantity
+BEGIN
+	IF NEW.quantity < @current_quantity
+    THEN
+		UPDATE products
+        SET quantity = quantity - NEW.quantity
+        WHERE productID = NEW.productID
+	ELSE ROLLBACK
+END;
