@@ -267,13 +267,21 @@ INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUE
 -- Trigger check product quantity when order
 CREATE TRIGGER update_order_quantity
 BEFORE INSERT ON orderdetail
-
+FOR EACH ROW
+BEGIN
+	IF (NEW.quantity < (SELECT quantity FROM products WHERE productID = NEW.produtID))
+    THEN 
+		UPDATE products
+		SET quantity = quantity - NEW.quantity
+		WHERE productID = NEW.productID
+	ELSE IF;
+END;
 
 CREATE TRIGGER update_quantity_order
-ON products
-FOR UPDATE
-AS DECLARE @order_quantity
-SELECT @order_quantity = quantity FROM products
+AFTER INSERT ON orderdetail
+FOR EACH ROW
+AS DECLARE @current_quantity
+SELECT @current_quantity = quantity FROM products
 BEGIN
 	IF (NEW.quantity < @current_quantity)
     THEN
