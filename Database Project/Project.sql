@@ -37,7 +37,7 @@ create table customers (
 	phone_number varchar(12) not null,
 	address varchar(50) not null,
 	total_money_ordered int not null,
-	ranking varchar(10) not null CHECK (ranking IN ('Bronze','Silver','Gold')),
+	ranking varchar(10) CHECK (ranking IN ('Bronze','Silver','Gold')),
 	constraint customer_pk primary key(customerID));
 
 create table orders (
@@ -227,16 +227,28 @@ select providerID, provider_name, address, phone_number
 from providers;
 
 select * from genProvider;
--- trigger
+-- Trigger update rank when insert
 CREATE TRIGGER set_customer_rank
-AFTER INSERT ON customers
+BEFORE INSERT ON customers
 FOR EACH ROW
-BEGIN
-    UPDATE customers SET ranking =
-        CASE
-            WHEN NEW.total_money_ordered >= 10000000 THEN 'Gold'
-            WHEN NEW.total_money_ordered >= 5000000 THEN 'Silver'
-            ELSE 'Bronze'
-        END
-    WHERE customerID = NEW.customerID
+SET NEW.ranking =
+	CASE
+		WHEN NEW.total_money_ordered >= 10000000 THEN 'Gold'
+		WHEN NEW.total_money_ordered >= 5000000 THEN 'Silver'
+		ELSE 'Bronze'
 END;
+
+-- Trigger update rank when update
+CREATE TRIGGER update_customer_rank
+BEFORE UPDATE ON customers
+FOR EACH ROW
+SET NEW.ranking =
+	CASE
+		WHEN NEW.total_money_ordered >= 10000000 THEN 'Gold'
+		WHEN NEW.total_money_ordered >= 5000000 THEN 'Silver'
+		ELSE 'Bronze'
+END;
+UPDATE `project`.`customers` SET `total_money_ordered` = '12000000' WHERE (`customerID` = 'CS011');
+INSERT INTO `project`.`customers` (`customerID`, `customer_name`, `email`, `phone_number`, `address`, `total_money_ordered`) VALUES ('CS011', 'ABC', 'abc@gmail.com', '0353-999-011', 'Hoan Kiem, Ha Noi', '6000000');
+INSERT INTO `project`.`customers` (`customerID`, `customer_name`, `email`, `phone_number`, `address`, `total_money_ordered`) VALUES ('CS012', 'AC', 'ac@gmail.com', '0353-999-012', 'Hoan Kiem, Ha Noi', '12000000');
+drop trigger set_customer_rank;
