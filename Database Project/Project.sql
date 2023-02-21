@@ -227,6 +227,7 @@ select providerID, provider_name, address, phone_number
 from providers;
 
 select * from genProvider;
+
 -- Trigger update rank when insert
 CREATE TRIGGER set_customer_rank
 BEFORE INSERT ON customers
@@ -248,6 +249,7 @@ SET NEW.ranking =
 		WHEN NEW.total_money_ordered >= 5000000 THEN 'Silver'
 		ELSE 'Bronze'
 END;
+
 UPDATE `project`.`customers` SET `total_money_ordered` = '12000000' WHERE (`customerID` = 'CS011');
 INSERT INTO `project`.`customers` (`customerID`, `customer_name`, `email`, `phone_number`, `address`, `total_money_ordered`) VALUES ('CS011', 'ABC', 'abc@gmail.com', '0353-999-011', 'Hoan Kiem, Ha Noi', '6000000');
 INSERT INTO `project`.`customers` (`customerID`, `customer_name`, `email`, `phone_number`, `address`, `total_money_ordered`) VALUES ('CS012', 'AC', 'ac@gmail.com', '0353-999-012', 'Hoan Kiem, Ha Noi', '12000000');
@@ -265,28 +267,22 @@ INSERT INTO `project`.`import` (`importID`, `providerID`, `date`) VALUES ('IM013
 INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUES ('IM013', 'FD010', '900');
 
 -- Trigger check product quantity when order
-CREATE TRIGGER update_order_quantity
+DELIMITER |
+CREATE TRIGGER check_product_quantity
 BEFORE INSERT ON orderdetail
 FOR EACH ROW
 BEGIN
-	IF (NEW.quantity < (SELECT quantity FROM products WHERE productID = NEW.produtID))
-    THEN 
-		UPDATE products
-		SET quantity = quantity - NEW.quantity
-		WHERE productID = NEW.productID
-	ELSE IF;
-END;
-
-CREATE TRIGGER update_quantity_order
-AFTER INSERT ON orderdetail
-FOR EACH ROW
-AS DECLARE @current_quantity
-SELECT @current_quantity = quantity FROM products
-BEGIN
-	IF (NEW.quantity < @current_quantity)
-    THEN
-		UPDATE products
-        SET quantity = quantity - NEW.quantity
-        WHERE productID = NEW.productID
-	ELSE ROLLBACK
-END;
+    DECLARE product_quantity INT;
+    SELECT quantity INTO product_quantity FROM products WHERE productID = NEW.productID;    
+    IF product_quantity < NEW.quantity THEN
+		DELETE FROM orderdetail WHERE orderID = NEW.orderID;
+        DELETE FROM orders WHERE orderID = NEW.orderID;
+    ELSE
+        UPDATE products SET quantity = quantity - NEW.quantity WHERE productID = NEW.productID;
+    END IF;
+END; 
+|
+DELIMITER ;
+drop trigger check_product_quantity;
+INSERT INTO `project`.`orders` (`orderID`, `customerID`, `date`, `status`) VALUES ('OD011', 'CS010', '2023-02-11', 'Pending');
+INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD011', 'DR001', '300');
