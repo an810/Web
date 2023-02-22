@@ -266,6 +266,7 @@ FOR EACH ROW
 INSERT INTO `project`.`import` (`importID`, `providerID`, `date`) VALUES ('IM013', 'PR007', '2022-10-16');
 INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUES ('IM013', 'FD010', '900');
 
+
 -- Trigger check product quantity when order
 DELIMITER |
 CREATE TRIGGER check_product_quantity
@@ -275,8 +276,7 @@ BEGIN
     DECLARE product_quantity INT;
     SELECT quantity INTO product_quantity FROM products WHERE productID = NEW.productID;    
     IF product_quantity < NEW.quantity THEN
-		-- DELETE FROM orders WHERE orderID = NEW.orderID;
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Quantity not available';
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Product quantity insufficient';
     ELSE
         UPDATE products SET quantity = quantity - NEW.quantity WHERE productID = NEW.productID;
     END IF;
@@ -284,35 +284,9 @@ END;
 |
 DELIMITER ;
 
-DELIMITER |
-CREATE TRIGGER check_product_quantity
-AFTER INSERT ON orderdetail
-FOR EACH ROW
-BEGIN
-    DECLARE product_quantity INT;
-    SELECT quantity INTO product_quantity FROM products WHERE productID = NEW.productID;    
-    IF product_quantity < NEW.quantity THEN
-        SET @order_id = NEW.orderID;
-        SET @product_id = NEW.productID;
-        SET @quantity = NEW.quantity;
-	ELSE
-        UPDATE products SET quantity = quantity - NEW.quantity WHERE productID = NEW.productID;
-    END IF;
-END; 
-|
-
-CREATE TRIGGER delete_order
-AFTER INSERT ON check_product_quantity
-FOR EACH ROW
-BEGIN
-    DELETE FROM orders WHERE orderID = @order_id;
-    DELETE FROM orderdetail WHERE orderID = @order_id AND productID = @product_id AND quantity = @quantity;
-END;
-| DELIMITER ;
-
-
 drop trigger check_product_quantity;
 drop trigger delete_order;
 INSERT INTO `project`.`orders` (`orderID`, `customerID`, `date`, `status`) VALUES ('OD011', 'CS010', '2023-02-11', 'Pending');
 DELETE FROM `project`.`orders` WHERE (`orderID` = 'OD011');
 INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD011', 'DR001', '300');
+DELETE FROM `project`.`orderdetail` WHERE (`orderID` = 'OD011');
