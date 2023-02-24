@@ -46,7 +46,7 @@ create table orders (
 	orderID varchar(5) not null,
 	customerID varchar(5) not null,
 	date date not null,
-    status varchar(10) not null CHECK (status IN ('Pending','Shipping','Resolved')),
+    status varchar(10) not null CHECK (status IN ('Pending','Shipping','Resolved', 'Rejected')),
 	constraint order_pk1 primary key (orderID),
 	constraint cutomer_fk1 foreign key (customerID) references customers(customerID));
     
@@ -270,28 +270,34 @@ drop trigger update_quantity_product;
 -- Trigger check product quantity when order
 DELIMITER |
 CREATE TRIGGER check_product_quantity
-BEFORE INSERT ON orderdetail
+BEFORE UPDATE ON orders
 FOR EACH ROW
 BEGIN
     DECLARE product_quantity INT;
-    SELECT quantity INTO product_quantity FROM products WHERE productID = NEW.productID;    
-    IF product_quantity < NEW.quantity THEN
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Product quantity insufficient';
-    ELSE
-        UPDATE products SET quantity = quantity - NEW.quantity WHERE productID = NEW.productID;
-        UPDATE products SET sold = sold + NEW.quantity WHERE productID = NEW.productID;
-        UPDATE customers
-        SET total_money_ordered = total_money_ordered + (SELECT SUM(orderdetail.quantity * price_out) FROM orderdetail JOIN products ON orderdetail.productID = products.productID WHERE orderID = NEW.orderID)
-        WHERE customerID = (SELECT customerID FROM orders WHERE orderID = NEW.orderID);
+    DECLARE order_quantity INT;
+    IF OLD.status = 'Pending' AND NEW.status = 'Shipping' THEN
+        SELECT SUM(quantity) INTO order_quantity FROM orderdetail WHERE orderID = NEW.orderID;
+        SELECT quantity INTO product_quantity FROM products WHERE productID IN (SELECT productID FROM orderdetail WHERE orderID = NEW.orderID);
+        IF order_quantity > product_quantity THEN
+            SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Product quantity insufficient';
+        ELSE
+            UPDATE products
+            JOIN orderdetail ON products.productID = orderdetail.productID AND orderdetail.orderID = NEW.orderID
+            SET products.quantity = products.quantity - orderdetail.quantity,
+                products.sold = products.sold + orderdetail.quantity;
+        END IF;
     END IF;
-END; 
-|
+END |
 DELIMITER ;
 
+
+drop trigger update_products;
 drop trigger check_product_quantity;
 
 INSERT INTO `project`.`orders` (`orderID`, `customerID`, `date`, `status`) VALUES ('OD011', 'CS010', '2023-02-11', 'Pending');
+
 DELETE FROM `project`.`orders` WHERE (`orderID` = 'OD011');
 INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD011', 'PD001', '30');
 DELETE FROM `project`.`orderdetail` WHERE (`orderID` = 'OD011');
 UPDATE `project`.`products` SET `sold` = '900', `quantity` = '150' WHERE (`productID` = 'PD001');
+
