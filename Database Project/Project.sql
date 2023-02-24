@@ -3,6 +3,7 @@ create table providers (
 	provider_name varchar(30) not null,
 	phone_number varchar(12) not null,
 	address varchar(50) not null,
+    email varchar(30) not null,
 	constraint provider_pk primary key(providerID));
 
 
@@ -10,6 +11,7 @@ create table import (
 	importID varchar(5) not null,
 	providerID varchar(5) not null,
 	date date not null,
+    status varchar(10) not null CHECK (status IN ('Checked','Unchecked')),
 	constraint import_pk primary key(importID),
 	constraint provider_fK foreign key (providerID) references providers(providerID));
 
@@ -56,13 +58,7 @@ create table orderdetail (
 	constraint cutomer_fk2 foreign key (orderID) references orders(orderID),
 	constraint product_fk2 foreign key (productID) references products(productID));
 
-create table cart (
-	customerID varchar(5) not null,
-	productID varchar(5) not null,
-	quantity int not null,
-    constraint cart_pk primary key (customerID, productID),
-	constraint customer_fk3 foreign key (customerID) references customers(customerID),
-	constraint product_fk3 foreign key (productID) references products(productID));
+
 
 drop table providers;
 drop table customers;
@@ -71,17 +67,17 @@ drop table products;
 drop table orders;
 drop table importdetail;
 drop table orderdetail;
-drop table cart;
-	
+
+
 -- provider 
-INSERT INTO `project`.`providers` (`providerID`, `provider_name`, `phone_number`, `address`) VALUES ('PR001', 'Noodle', '0353-888-001', 'Hai Duong');
-INSERT INTO `project`.`providers` (`providerID`, `provider_name`, `phone_number`, `address`) VALUES ('PR002', 'Sausage', '0353-888-002', 'Nghe An');
-INSERT INTO `project`.`providers` (`providerID`, `provider_name`, `phone_number`, `address`) VALUES ('PR003', 'Water', '0353-888-003', 'Ha Noi');
-INSERT INTO `project`.`providers` (`providerID`, `provider_name`, `phone_number`, `address`) VALUES ('PR004', 'Snack', '0353-888-004', 'Bac Giang');
-INSERT INTO `project`.`providers` (`providerID`, `provider_name`, `phone_number`, `address`) VALUES ('PR005', 'Chocolate', '0353-888-005', 'Hai Duong');
-INSERT INTO `project`.`providers` (`providerID`, `provider_name`, `phone_number`, `address`) VALUES ('PR006', 'Milk', '0353-888-006', 'Quang Ninh');
-INSERT INTO `project`.`providers` (`providerID`, `provider_name`, `phone_number`, `address`) VALUES ('PR007', 'IceCream', '0353-888-007', 'Ha Noi');
-INSERT INTO `project`.`providers` (`providerID`, `provider_name`, `phone_number`, `address`) VALUES ('PR008', 'Cookie', '0353-888-008', 'Bac Ninh');
+INSERT INTO `project`.`providers` (`providerID`, `provider_name`, `phone_number`, `address`, `email`) VALUES ('PR001', 'Noodle', '0353-888-001', 'Hai Duong', 'noodle@gmail.com');
+INSERT INTO `project`.`providers` (`providerID`, `provider_name`, `phone_number`, `address`, `email`) VALUES ('PR002', 'Sausage', '0353-888-002', 'Nghe An', 'sausage@gmail.com');
+INSERT INTO `project`.`providers` (`providerID`, `provider_name`, `phone_number`, `address`, `email`) VALUES ('PR003', 'Water', '0353-888-003', 'Ha Noi', 'water@gmail.com');
+INSERT INTO `project`.`providers` (`providerID`, `provider_name`, `phone_number`, `address`, `email`) VALUES ('PR004', 'Snack', '0353-888-004', 'Bac Giang', 'snack@gmail.com');
+INSERT INTO `project`.`providers` (`providerID`, `provider_name`, `phone_number`, `address`, `email`) VALUES ('PR005', 'Chocolate', '0353-888-005', 'Hai Duong', 'chocolate@gmail.com');
+INSERT INTO `project`.`providers` (`providerID`, `provider_name`, `phone_number`, `address`, `email`) VALUES ('PR006', 'Milk', '0353-888-006', 'Quang Ninh', 'milk@gmail.com');
+INSERT INTO `project`.`providers` (`providerID`, `provider_name`, `phone_number`, `address`, `email`) VALUES ('PR007', 'IceCream', '0353-888-007', 'Ha Noi', 'icecream@gmail.com');
+INSERT INTO `project`.`providers` (`providerID`, `provider_name`, `phone_number`, `address`, `email`) VALUES ('PR008', 'Cookie', '0353-888-008', 'Bac Ninh', 'cookie@gmail.com');
 
 -- customer
 INSERT INTO `project`.`customers` (`customerID`, `customer_name`, `email`, `phone_number`, `address`, `total_money_ordered`, `ranking`) VALUES ('CS001', 'Do Hong Hai', 'haidh@gmail.com', '0353-999-001', 'Hai Ba Trung, Ha Noi', '2900000', 'Bronze');
@@ -96,54 +92,54 @@ INSERT INTO `project`.`customers` (`customerID`, `customer_name`, `email`, `phon
 INSERT INTO `project`.`customers` (`customerID`, `customer_name`, `email`, `phone_number`, `address`, `total_money_ordered`, `ranking`) VALUES ('CS010', 'Nguyen Van Hanh', 'hanhnv@gmail.com', '0353-999-010', 'Tay Ho, Ha Noi', '900000', 'Bronze');
 
 -- products
-INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('DR001', 'Lavie', '4500', '6000', '900', '150');
-INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('DR002', 'Aquafina', '4000', '5000', '850', '150');
-INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('DR003', 'Dasani', '4000', '5000', '800', '120');
-INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('DR004', 'Milo', '9000', '11000', '850', '130');
-INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('DR005', 'TH True Milk', '25000', '27000', '700', '90');
-INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('DR006', 'Coca Cola', '8500', '10000', '1200', '170');
-INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('DR007', '7Up', '9000', '10000', '1000', '160');
-INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('DR008', 'Latte', '8000', '10000', '600', '110');
-INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('DR009', 'Yomost', '10000', '11000', '800', '120');
-INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('DR010', 'C2', '10000', '12000', '650', '100');
-INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('FD001', 'OREO', '17000', '19000', '600', '120');
-INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('FD002', 'CreamO', '16500', '18000', '500', '140');
-INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('FD003', 'Lays Snack', '20000', '22000', '950', '100');
-INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('FD004', 'CP Sausage', '47000', '18000', '500', '90');
-INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('FD005', 'Oishi Snack', '3500', '5000', '700', '80');
-INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('FD006', 'Omachi', '5000', '6000', '800', '130');
-INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('FD007', 'HaoHao', '3000', '5000', '900', '120');
-INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('FD008', 'KitKat', '22000', '25000', '500', '90');
-INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('FD009', 'Celano', '16000', '18000', '750', '60');
-INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('FD010', 'Walls', '17000', '20000', '800', '70');
+INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('PD001', 'Lavie', '4500', '6000', '900', '150');
+INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('PD002', 'Aquafina', '4000', '5000', '850', '150');
+INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('PD003', 'Dasani', '4000', '5000', '800', '120');
+INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('PD004', 'Milo', '9000', '11000', '850', '130');
+INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('PD005', 'TH True Milk', '25000', '27000', '700', '90');
+INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('PD006', 'Coca Cola', '8500', '10000', '1200', '170');
+INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('PD007', '7Up', '9000', '10000', '1000', '160');
+INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('PD008', 'Latte', '8000', '10000', '600', '110');
+INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('PD009', 'Yomost', '10000', '11000', '800', '120');
+INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('PD010', 'C2', '10000', '12000', '650', '100');
+INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('PD011', 'OREO', '17000', '19000', '600', '120');
+INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('PD012', 'CreamO', '16500', '18000', '500', '140');
+INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('PD013', 'Lays Snack', '20000', '22000', '950', '100');
+INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('PD014', 'CP Sausage', '47000', '18000', '500', '90');
+INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('PD015', 'Oishi Snack', '3500', '5000', '700', '80');
+INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('PD016', 'Omachi', '5000', '6000', '800', '130');
+INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('PD017', 'HaoHao', '3000', '5000', '900', '120');
+INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('PD018', 'KitKat', '22000', '25000', '500', '90');
+INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('PD019', 'Celano', '16000', '18000', '750', '60');
+INSERT INTO `project`.`products` (`productID`, `name`, `price_in`, `price_out`, `sold`, `quantity`) VALUES ('PD020', 'Walls', '17000', '20000', '800', '70');
 
 -- import
-INSERT INTO `project`.`import` (`importID`, `providerID`, `date`) VALUES ('IM001', 'PR001', '2022-11-15');
-INSERT INTO `project`.`import` (`importID`, `providerID`, `date`) VALUES ('IM002', 'PR001', '2022-12-15');
-INSERT INTO `project`.`import` (`importID`, `providerID`, `date`) VALUES ('IM003', 'PR002', '2022-11-10');
-INSERT INTO `project`.`import` (`importID`, `providerID`, `date`) VALUES ('IM004', 'PR003', '2022-09-20');
-INSERT INTO `project`.`import` (`importID`, `providerID`, `date`) VALUES ('IM005', 'PR003', '2022-10-20');
-INSERT INTO `project`.`import` (`importID`, `providerID`, `date`) VALUES ('IM006', 'PR003', '2022-12-20');
-INSERT INTO `project`.`import` (`importID`, `providerID`, `date`) VALUES ('IM007', 'PR004', '2022-11-10');
-INSERT INTO `project`.`import` (`importID`, `providerID`, `date`) VALUES ('IM008', 'PR004', '2022-12-10');
-INSERT INTO `project`.`import` (`importID`, `providerID`, `date`) VALUES ('IM009', 'PR005', '2022-10-30');
-INSERT INTO `project`.`import` (`importID`, `providerID`, `date`) VALUES ('IM010', 'PR006', '2022-12-30');
-INSERT INTO `project`.`import` (`importID`, `providerID`, `date`) VALUES ('IM011', 'PR008', '2022-12-31');
-INSERT INTO `project`.`import` (`importID`, `providerID`, `date`) VALUES ('IM012', 'PR007', '2022-10-15');
+INSERT INTO `project`.`import` (`importID`, `providerID`, `date`, `status`) VALUES ('IM001', 'PR001', '2023-02-15', 'Unchecked');
+INSERT INTO `project`.`import` (`importID`, `providerID`, `date`, `status`) VALUES ('IM002', 'PR001', '2023-01-15', 'Checked');
+INSERT INTO `project`.`import` (`importID`, `providerID`, `date`, `status`) VALUES ('IM003', 'PR002', '2023-02-20', 'Unchecked');
+INSERT INTO `project`.`import` (`importID`, `providerID`, `date`, `status`) VALUES ('IM004', 'PR003', '2023-02-20', 'Unchecked');
+INSERT INTO `project`.`import` (`importID`, `providerID`, `date`, `status`) VALUES ('IM005', 'PR003', '2023-01-20', 'Checked');
+INSERT INTO `project`.`import` (`importID`, `providerID`, `date`, `status`) VALUES ('IM006', 'PR003', '2023-01-15', 'Checked');
+INSERT INTO `project`.`import` (`importID`, `providerID`, `date`, `status`) VALUES ('IM007', 'PR004', '2023-02-23', 'Unchecked');
+INSERT INTO `project`.`import` (`importID`, `providerID`, `date`, `status`) VALUES ('IM008', 'PR004', '2023-01-15', 'Checked');
+INSERT INTO `project`.`import` (`importID`, `providerID`, `date`, `status`) VALUES ('IM009', 'PR005', '2023-01-30', 'Checked');
+INSERT INTO `project`.`import` (`importID`, `providerID`, `date`, `status`) VALUES ('IM010', 'PR006', '2023-02-05', 'Checked');
+INSERT INTO `project`.`import` (`importID`, `providerID`, `date`, `status`) VALUES ('IM011', 'PR008', '2023-02-24', 'Unchecked');
+INSERT INTO `project`.`import` (`importID`, `providerID`, `date`, `status`) VALUES ('IM012', 'PR007', '2023-02-05', 'Checked');
 
 -- import detail
-INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUES ('IM001', 'FD006', '50');
-INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUES ('IM002', 'FD007', '30');
-INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUES ('IM003', 'FD004', '40');
-INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUES ('IM004', 'DR007', '90');
-INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUES ('IM005', 'DR002', '100');
-INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUES ('IM006', 'DR006', '80');
-INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUES ('IM007', 'FD003', '60');
-INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUES ('IM008', 'FD005', '60');
-INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUES ('IM009', 'FD008', '50');
-INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUES ('IM010', 'DR009', '80');
-INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUES ('IM011', 'FD001', '60');
-INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUES ('IM012', 'FD010', '50');
+INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUES ('IM001', 'PD016', '50');
+INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUES ('IM002', 'PD017', '30');
+INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUES ('IM003', 'PD014', '40');
+INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUES ('IM004', 'PD007', '90');
+INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUES ('IM005', 'PD002', '100');
+INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUES ('IM006', 'PD006', '80');
+INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUES ('IM007', 'PD013', '60');
+INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUES ('IM008', 'PD015', '60');
+INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUES ('IM009', 'PD018', '50');
+INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUES ('IM010', 'PD009', '80');
+INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUES ('IM011', 'PD011', '60');
+INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUES ('IM012', 'PD020', '50');
 
 -- orders
 INSERT INTO `project`.`orders` (`orderID`, `customerID`, `date`, `status`) VALUES ('OD001', 'CS001', '2023-02-15', 'Shipping');
@@ -158,27 +154,19 @@ INSERT INTO `project`.`orders` (`orderID`, `customerID`, `date`, `status`) VALUE
 INSERT INTO `project`.`orders` (`orderID`, `customerID`, `date`, `status`) VALUES ('OD010', 'CS010', '2023-02-10', 'Resolved');
 
 -- order detail
-INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD001', 'DR001', '30');
-INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD001', 'DR002', '20');
-INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD002', 'FD002', '10');
-INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD002', 'FD010', '10');
-INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD003', 'FD004', '10');
-INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD003', 'FD003', '20');
-INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD004', 'DR006', '50');
-INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD005', 'DR009', '15');
-INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD006', 'FD010', '30');
-INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD007', 'FD008', '20');
-INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD009', 'FD003', '20');
-INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD010', 'DR004', '20');
+INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD001', 'PD001', '30');
+INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD001', 'PD002', '20');
+INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD002', 'PD012', '10');
+INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD002', 'PD020', '10');
+INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD003', 'PD014', '10');
+INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD003', 'PD013', '20');
+INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD004', 'PD006', '50');
+INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD005', 'PD009', '15');
+INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD006', 'PD020', '30');
+INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD007', 'PD018', '20');
+INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD009', 'PD013', '20');
+INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD010', 'PD004', '20');
 
--- cart
-INSERT INTO `project`.`cart` (`customerID`, `productID`, `quantity`) VALUES ('CS001', 'FD001', '10');
-INSERT INTO `project`.`cart` (`customerID`, `productID`, `quantity`) VALUES ('CS002', 'DR001', '20');
-INSERT INTO `project`.`cart` (`customerID`, `productID`, `quantity`) VALUES ('CS003', 'FD010', '10');
-INSERT INTO `project`.`cart` (`customerID`, `productID`, `quantity`) VALUES ('CS004', 'FD001', '10');
-INSERT INTO `project`.`cart` (`customerID`, `productID`, `quantity`) VALUES ('CS005', 'FD005', '30');
-INSERT INTO `project`.`cart` (`customerID`, `productID`, `quantity`) VALUES ('CS006', 'DR004', '15');
-INSERT INTO `project`.`cart` (`customerID`, `productID`, `quantity`) VALUES ('CS007', 'DR009', '20');
 
 -- View genInventory
 create view genInventory as
@@ -264,7 +252,7 @@ FOR EACH ROW
 	WHERE productID = NEW.productID;
 
 INSERT INTO `project`.`import` (`importID`, `providerID`, `date`) VALUES ('IM013', 'PR007', '2022-10-16');
-INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUES ('IM013', 'FD010', '900');
+INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUES ('IM013', 'PD020', '900');
 
 
 -- Trigger check product quantity when order
@@ -288,5 +276,5 @@ drop trigger check_product_quantity;
 
 INSERT INTO `project`.`orders` (`orderID`, `customerID`, `date`, `status`) VALUES ('OD011', 'CS010', '2023-02-11', 'Pending');
 DELETE FROM `project`.`orders` WHERE (`orderID` = 'OD011');
-INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD011', 'DR001', '300');
+INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD011', 'PD001', '300');
 DELETE FROM `project`.`orderdetail` WHERE (`orderID` = 'OD011');
