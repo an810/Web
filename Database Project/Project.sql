@@ -279,6 +279,7 @@ BEGIN
         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Product quantity insufficient';
     ELSE
         UPDATE products SET quantity = quantity - NEW.quantity WHERE productID = NEW.productID;
+        UPDATE products SET sold = sold + NEW.quantity WHERE productID = NEW.productID;
     END IF;
 END; 
 |
@@ -288,5 +289,6 @@ drop trigger check_product_quantity;
 
 INSERT INTO `project`.`orders` (`orderID`, `customerID`, `date`, `status`) VALUES ('OD011', 'CS010', '2023-02-11', 'Pending');
 DELETE FROM `project`.`orders` WHERE (`orderID` = 'OD011');
-INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD011', 'PD001', '300');
+INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD011', 'PD001', '30');
 DELETE FROM `project`.`orderdetail` WHERE (`orderID` = 'OD011');
+UPDATE `project`.`products` SET `sold` = '900', `quantity` = '150' WHERE (`productID` = 'PD001');
