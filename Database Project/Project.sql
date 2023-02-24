@@ -11,7 +11,7 @@ create table import (
 	importID varchar(5) not null,
 	providerID varchar(5) not null,
 	date date not null,
-    status varchar(10) not null CHECK (status IN ('Checked','Unchecked')),
+    status varchar(10) not null CHECK (status IN ('Checked','Unchecked', 'Rejected')),
 	constraint import_pk primary key(importID),
 	constraint provider_fK foreign key (providerID) references providers(providerID));
 
@@ -250,7 +250,7 @@ CREATE TRIGGER update_product_quantity
 AFTER UPDATE ON import
 FOR EACH ROW
 BEGIN
-    IF NEW.status = 'checked' AND OLD.status = 'unchecked' THEN
+    IF NEW.status = 'Checked' AND OLD.status = 'Unchecked' THEN
         UPDATE products
         INNER JOIN importdetail ON products.productID = importdetail.productID
         SET products.quantity = products.quantity + importdetail.quantity
@@ -261,7 +261,7 @@ END;
 DELIMITER ;
 	 
 UPDATE `project`.`import` SET `status` = 'Checked' WHERE (`importID` = 'IM001');
-UPDATE `project`.`import` SET `status` = 'UnChecked' WHERE (`importID` = 'IM001');
+UPDATE `project`.`import` SET `status` = 'Unchecked' WHERE (`importID` = 'IM001');
 UPDATE `project`.`products` SET `quantity` = '130' WHERE (`productID` = 'PD016');
 
 
