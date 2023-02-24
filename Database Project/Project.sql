@@ -245,7 +245,7 @@ drop trigger set_customer_rank;
 
 -- Trigger update quantity when import 
 CREATE TRIGGER update_quantity_product
-AFTER INSERT ON importdetail 
+AFTER UPDATE ON importdetail 
 FOR EACH ROW
 	UPDATE products
 	SET quantity = quantity + NEW.quantity
