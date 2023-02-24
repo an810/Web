@@ -280,6 +280,9 @@ BEGIN
     ELSE
         UPDATE products SET quantity = quantity - NEW.quantity WHERE productID = NEW.productID;
         UPDATE products SET sold = sold + NEW.quantity WHERE productID = NEW.productID;
+        UPDATE customers
+        SET total_money_ordered = total_money_ordered + (SELECT SUM(orderdetail.quantity * price_out) FROM orderdetail JOIN products ON orderdetail.productID = products.productID WHERE orderID = NEW.orderID)
+        WHERE customerID = (SELECT customerID FROM orders WHERE orderID = NEW.orderID);
     END IF;
 END; 
 |
