@@ -201,6 +201,7 @@ group by O.orderID;
 
 select * from genorder;
 drop view genorder;
+
 -- View genCustomer
 create view genCustomer as
 select customerID, customer_name, address, phone_number, ranking
@@ -244,16 +245,27 @@ INSERT INTO `project`.`customers` (`customerID`, `customer_name`, `email`, `phon
 drop trigger set_customer_rank;
 
 -- Trigger update quantity when import 
-CREATE TRIGGER update_quantity_product
-AFTER UPDATE ON importdetail 
+DELIMITER |
+CREATE TRIGGER update_product_quantity
+AFTER UPDATE ON import
 FOR EACH ROW
-	UPDATE products
-	SET quantity = quantity + NEW.quantity
-	WHERE productID = NEW.productID;
+BEGIN
+    IF NEW.status = 'checked' AND OLD.status = 'unchecked' THEN
+        UPDATE products
+        INNER JOIN importdetail ON products.productID = importdetail.productID
+        SET products.quantity = products.quantity + importdetail.quantity
+        WHERE importdetail.importID = NEW.importID;
+    END IF;
+END;
+|
+DELIMITER ;
+	 
+UPDATE `project`.`import` SET `status` = 'Checked' WHERE (`importID` = 'IM001');
+UPDATE `project`.`import` SET `status` = 'UnChecked' WHERE (`importID` = 'IM001');
+UPDATE `project`.`products` SET `quantity` = '130' WHERE (`productID` = 'PD016');
 
-INSERT INTO `project`.`import` (`importID`, `providerID`, `date`) VALUES ('IM013', 'PR007', '2022-10-16');
-INSERT INTO `project`.`importdetail` (`importID`, `productID`, `quantity`) VALUES ('IM013', 'PD020', '900');
 
+drop trigger update_quantity_product;
 
 -- Trigger check product quantity when order
 DELIMITER |
