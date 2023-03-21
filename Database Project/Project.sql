@@ -290,14 +290,86 @@ BEGIN
 END |
 DELIMITER ;
 
+-- test
+create table trigger_log (
+	id int not null auto_increment primary key,
+	message varchar(255));
+    
+DELIMITER |
+CREATE TRIGGER check_product_quantity
+BEFORE UPDATE ON orders
+FOR EACH ROW
+BEGIN
+    IF NEW.status = 'Shipping' AND OLD.status = 'Pending' THEN
+	BEGIN
+        DECLARE done BOOL DEFAULT FALSE;
+        DECLARE productID INT;
+        DECLARE orderQuantity INT;
+        DECLARE productQuantity INT;
+        DECLARE cur CURSOR FOR SELECT productID, quantity FROM orderdetail WHERE orderID = NEW.orderID;
+        DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+        OPEN cur;
+        read_loop: LOOP
+            FETCH cur INTO productID, orderQuantity;
+            IF done THEN
+                LEAVE read_loop;
+            END IF;
+            SELECT quantity INTO productQuantity FROM products WHERE productID = productID;  
+            IF productQuantity < orderQuantity THEN
+                INSERT INTO trigger_log VALUES ('Error');
+            ELSE
+                UPDATE products SET quantity = quantity - orderQuantity, sold = sold + orderQuantity WHERE productID = productID;
+            END IF;
+        END LOOP;
+        CLOSE cur;
+    END ;
+    END IF; 
 
-drop trigger update_products;
+END; 
+|
+DELIMITER ;
+
+DELIMITER |
+CREATE TRIGGER check_product_quantity
+BEFORE UPDATE ON orders
+FOR EACH ROW
+BEGIN
+    IF OLD.status = 'Pending' AND NEW.status = 'Shipping' THEN
+    BEGIN
+        DECLARE done INT DEFAULT FALSE;
+        DECLARE order_productID, order_quantity, product_quantity, product_sold INT;
+        DECLARE product_cursor CURSOR FOR
+            SELECT productID, quantity FROM orderdetail WHERE orderID = OLD.orderID;
+        DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+        OPEN product_cursor;
+        product_loop: LOOP
+            FETCH product_cursor INTO order_productID, order_quantity;
+            IF done THEN
+                LEAVE product_loop;
+            END IF;
+            SELECT quantity, sold INTO product_quantity, product_sold FROM products WHERE productID = order_productID;
+            IF order_quantity > product_quantity THEN
+                INSERT INTO trigger_log VALUES ('Error');
+            ELSE
+                UPDATE products SET quantity = quantity - order_quantity, sold = sold + order_quantity WHERE productID = order_productID;
+            END IF;
+        END LOOP;
+        CLOSE product_cursor;
+        END;
+    END IF;
+END;
+|
+DELIMITER ;
+
+
+
 drop trigger check_product_quantity;
 
 INSERT INTO `project`.`orders` (`orderID`, `customerID`, `date`, `status`) VALUES ('OD011', 'CS010', '2023-02-11', 'Pending');
-
 DELETE FROM `project`.`orders` WHERE (`orderID` = 'OD011');
-INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD011', 'PD001', '30');
+INSERT INTO `project`.`orderdetail` (`orderID`, `productID`, `quantity`) VALUES ('OD011', 'PD001', '300');
 DELETE FROM `project`.`orderdetail` WHERE (`orderID` = 'OD011');
+UPDATE orders SET status = 'Shipping' WHERE orderID = 'OD011';
+UPDATE orders SET status = 'Pending' WHERE orderID = 'OD011';
 UPDATE `project`.`products` SET `sold` = '900', `quantity` = '150' WHERE (`productID` = 'PD001');
 
