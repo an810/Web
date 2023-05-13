@@ -1,0 +1,154 @@
+2023-05-10 20:28:32,629 DEBUG [background-preinit] logging: [] Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+2023-05-10 20:28:32,629 INFO  [main] MainApplication: [] Starting MainApplication using Java 11.0.2 on DESKTOP-5853TS3 with PID 8680 (D:\Code\GitHub\Web\Java Web\northwind-api\target\classes started by Thinkpad in D:\Code\GitHub\Web\Java Web\northwind-api)
+2023-05-10 20:28:32,641 DEBUG [main] MainApplication: [] Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-05-10 20:28:32,643 INFO  [main] MainApplication: [] No active profile set, falling back to 1 default profile: "default"
+2023-05-10 20:28:38,189 DEBUG [main] InternalLoggerFactory: [] Using SLF4J as the default logging framework
+2023-05-10 20:28:38,642 DEBUG [main] WebConfigure: [] Registering CORS filter
+2023-05-10 20:28:38,701 INFO  [main] WebConfigure: [] Web application fully configured
+2023-05-10 20:28:38,758 DEBUG [main] MDCLoggingFilter: [] Filter 'MDCLoggingFilter' configured for use
+2023-05-10 20:28:38,759 DEBUG [main] LoggingRequestFilter: [] Filter 'loggingRequestFilter' configured for use
+2023-05-10 20:28:39,236 DEBUG [main] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-10 20:28:39,237 DEBUG [main] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-10 20:28:39,246 DEBUG [main] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-10 20:28:39,255 DEBUG [main] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-10 20:28:39,257 DEBUG [main] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-10 20:28:39,258 DEBUG [main] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-10 20:28:39,327 DEBUG [main] SQLServerConnection: [] ConnectionID:1 created by (SQLServerDriver:1)
+2023-05-10 20:28:39,344 DEBUG [main] SQLServerConnection: [] ConnectionID:1 This attempt server name: 127.0.0.1 port: 1433 InstanceName: null useParallel: false
+2023-05-10 20:28:39,350 DEBUG [main] SQLServerConnection: [] ConnectionID:1 This attempt endtime: 1683725320582
+2023-05-10 20:28:39,351 DEBUG [main] SQLServerConnection: [] ConnectionID:1 This attempt No: 0
+2023-05-10 20:28:39,365 DEBUG [main] SQLServerConnection: [] ConnectionID:1 Connecting with server: 127.0.0.1 port: 1433 Timeout slice: 1230 Timeout Full: 10
+2023-05-10 20:28:39,403 DEBUG [main] SQLServerConnection: [] ConnectionID:1 ClientConnectionId: 4737d284-84b4-469c-8e4b-0ae040ad4238 Server returned major version:15
+2023-05-10 20:28:39,819 DEBUG [main] SQLServerStatement: [] SQLServerStatement:1 created by (ConnectionID:1 ClientConnectionId: 4737d284-84b4-469c-8e4b-0ae040ad4238)
+2023-05-10 20:28:39,821 DEBUG [main] SQLServerStatement: [] SQLServerStatement:1 Executing (not server cursor) SELECT 1
+2023-05-10 20:28:39,923 DEBUG [main] SQLServerResultSet: [] SQLServerResultSet:1 created by (SQLServerStatement:1)
+2023-05-10 20:28:40,019 DEBUG [main] SQLServerDatabaseMetaData: []  SQLServerDatabaseMetaData:1 created by (ConnectionID:1 ClientConnectionId: 4737d284-84b4-469c-8e4b-0ae040ad4238)
+2023-05-10 20:28:40,056 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-10 20:28:40,062 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-10 20:28:40,064 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-10 20:28:40,065 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:2 created by (SQLServerDriver:1)
+2023-05-10 20:28:40,066 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:2 This attempt server name: 127.0.0.1 port: 1433 InstanceName: null useParallel: false
+2023-05-10 20:28:40,067 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:2 This attempt endtime: 1683725321316
+2023-05-10 20:28:40,068 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:2 This attempt No: 0
+2023-05-10 20:28:40,068 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:2 Connecting with server: 127.0.0.1 port: 1433 Timeout slice: 1248 Timeout Full: 10
+2023-05-10 20:28:40,070 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:2 ClientConnectionId: ac1dd557-93c6-4fb4-9bb2-a2a216134ae3 Server returned major version:15
+2023-05-10 20:28:40,110 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-10 20:28:40,111 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-10 20:28:40,111 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-10 20:28:40,112 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:3 created by (SQLServerDriver:1)
+2023-05-10 20:28:40,112 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:3 This attempt server name: 127.0.0.1 port: 1433 InstanceName: null useParallel: false
+2023-05-10 20:28:40,112 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:3 This attempt endtime: 1683725321362
+2023-05-10 20:28:40,113 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:3 This attempt No: 0
+2023-05-10 20:28:40,113 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:3 Connecting with server: 127.0.0.1 port: 1433 Timeout slice: 1249 Timeout Full: 10
+2023-05-10 20:28:40,118 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:3 ClientConnectionId: 603dd110-89a3-4565-866b-15a931597732 Server returned major version:15
+2023-05-10 20:28:40,153 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-10 20:28:40,153 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-10 20:28:40,154 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-10 20:28:40,154 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:4 created by (SQLServerDriver:1)
+2023-05-10 20:28:40,155 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:4 This attempt server name: 127.0.0.1 port: 1433 InstanceName: null useParallel: false
+2023-05-10 20:28:40,155 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:4 This attempt endtime: 1683725321405
+2023-05-10 20:28:40,156 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:4 This attempt No: 0
+2023-05-10 20:28:40,156 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:4 Connecting with server: 127.0.0.1 port: 1433 Timeout slice: 1249 Timeout Full: 10
+2023-05-10 20:28:40,158 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:4 ClientConnectionId: 0b23bfd9-31af-4b8f-b568-09ca33921618 Server returned major version:15
+2023-05-10 20:28:40,188 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-10 20:28:40,189 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-10 20:28:40,190 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-10 20:28:40,192 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:5 created by (SQLServerDriver:1)
+2023-05-10 20:28:40,192 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:5 This attempt server name: 127.0.0.1 port: 1433 InstanceName: null useParallel: false
+2023-05-10 20:28:40,192 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:5 This attempt endtime: 1683725321442
+2023-05-10 20:28:40,193 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:5 This attempt No: 0
+2023-05-10 20:28:40,193 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:5 Connecting with server: 127.0.0.1 port: 1433 Timeout slice: 1249 Timeout Full: 10
+2023-05-10 20:28:40,195 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:5 ClientConnectionId: 7581e934-35f4-4897-bf7f-f2190d4f9a1c Server returned major version:15
+2023-05-10 20:28:40,233 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-10 20:28:40,234 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-10 20:28:40,234 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-10 20:28:40,234 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:6 created by (SQLServerDriver:1)
+2023-05-10 20:28:40,235 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:6 This attempt server name: 127.0.0.1 port: 1433 InstanceName: null useParallel: false
+2023-05-10 20:28:40,236 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:6 This attempt endtime: 1683725321485
+2023-05-10 20:28:40,236 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:6 This attempt No: 0
+2023-05-10 20:28:40,236 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:6 Connecting with server: 127.0.0.1 port: 1433 Timeout slice: 1249 Timeout Full: 10
+2023-05-10 20:28:40,242 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:6 ClientConnectionId: 5263dbcf-b215-4eae-a572-2f551d5b6930 Server returned major version:15
+2023-05-10 20:28:40,270 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-10 20:28:40,270 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-10 20:28:40,271 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-10 20:28:40,272 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:7 created by (SQLServerDriver:1)
+2023-05-10 20:28:40,272 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:7 This attempt server name: 127.0.0.1 port: 1433 InstanceName: null useParallel: false
+2023-05-10 20:28:40,273 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:7 This attempt endtime: 1683725321522
+2023-05-10 20:28:40,273 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:7 This attempt No: 0
+2023-05-10 20:28:40,273 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:7 Connecting with server: 127.0.0.1 port: 1433 Timeout slice: 1249 Timeout Full: 10
+2023-05-10 20:28:40,277 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:7 ClientConnectionId: 54ee1be1-385d-4243-ae03-5dcc0533c27e Server returned major version:15
+2023-05-10 20:28:40,316 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-10 20:28:40,317 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-10 20:28:40,317 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-10 20:28:40,317 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:8 created by (SQLServerDriver:1)
+2023-05-10 20:28:40,318 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:8 This attempt server name: 127.0.0.1 port: 1433 InstanceName: null useParallel: false
+2023-05-10 20:28:40,318 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:8 This attempt endtime: 1683725321568
+2023-05-10 20:28:40,319 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:8 This attempt No: 0
+2023-05-10 20:28:40,319 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:8 Connecting with server: 127.0.0.1 port: 1433 Timeout slice: 1249 Timeout Full: 10
+2023-05-10 20:28:40,322 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:8 ClientConnectionId: 352a49dd-3338-442c-ba88-e61027d635cf Server returned major version:15
+2023-05-10 20:28:40,363 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-10 20:28:40,364 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-10 20:28:40,364 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-10 20:28:40,365 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:9 created by (SQLServerDriver:1)
+2023-05-10 20:28:40,365 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:9 This attempt server name: 127.0.0.1 port: 1433 InstanceName: null useParallel: false
+2023-05-10 20:28:40,365 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:9 This attempt endtime: 1683725321615
+2023-05-10 20:28:40,366 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:9 This attempt No: 0
+2023-05-10 20:28:40,366 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:9 Connecting with server: 127.0.0.1 port: 1433 Timeout slice: 1249 Timeout Full: 10
+2023-05-10 20:28:40,369 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:9 ClientConnectionId: 3e4c6925-3ca0-4920-af35-85eb7dd53c2c Server returned major version:15
+2023-05-10 20:28:40,412 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-10 20:28:40,412 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-10 20:28:40,412 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-10 20:28:40,413 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:10 created by (SQLServerDriver:1)
+2023-05-10 20:28:40,413 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:10 This attempt server name: 127.0.0.1 port: 1433 InstanceName: null useParallel: false
+2023-05-10 20:28:40,414 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:10 This attempt endtime: 1683725321663
+2023-05-10 20:28:40,414 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:10 This attempt No: 0
+2023-05-10 20:28:40,415 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:10 Connecting with server: 127.0.0.1 port: 1433 Timeout slice: 1249 Timeout Full: 10
+2023-05-10 20:28:40,416 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:10 ClientConnectionId: b654ef30-c4a7-410c-b018-e5a6e86567eb Server returned major version:15
+2023-05-10 20:28:41,027 DEBUG [main] SQLServerStatement: [] SQLServerStatement:2 created by (ConnectionID:1 ClientConnectionId: 4737d284-84b4-469c-8e4b-0ae040ad4238)
+2023-05-10 20:28:41,028 DEBUG [main] SQLServerStatement: [] SQLServerStatement:2 Executing (not server cursor) SELECT 1
+2023-05-10 20:28:41,028 DEBUG [main] SQLServerResultSet: [] SQLServerResultSet:2 created by (SQLServerStatement:2)
+2023-05-10 20:28:41,080 DEBUG [main] SQLServerStatement: [] SQLServerStatement:3 created by (ConnectionID:1 ClientConnectionId: 4737d284-84b4-469c-8e4b-0ae040ad4238)
+2023-05-10 20:28:41,081 DEBUG [main] SQLServerStatement: [] SQLServerStatement:3 Executing (not server cursor) SELECT SCHEMA_NAME()
+2023-05-10 20:28:41,082 DEBUG [main] SQLServerResultSet: [] SQLServerResultSet:3 created by (SQLServerStatement:3)
+2023-05-10 20:28:41,089 DEBUG [main] SQLServerStatement: [] SQLServerStatement:4 created by (ConnectionID:1 ClientConnectionId: 4737d284-84b4-469c-8e4b-0ae040ad4238)
+2023-05-10 20:28:41,091 DEBUG [main] SQLServerStatement: [] SQLServerStatement:4 Executing (not server cursor) SELECT SCHEMA_NAME()
+2023-05-10 20:28:41,091 DEBUG [main] SQLServerResultSet: [] SQLServerResultSet:4 created by (SQLServerStatement:4)
+2023-05-10 20:28:41,105 DEBUG [main] SQLServerClob: [] SQLServerClob:1 created by (ConnectionID:1 ClientConnectionId: 4737d284-84b4-469c-8e4b-0ae040ad4238)
+2023-05-10 20:28:41,485 ERROR [main] LocalContainerEntityManagerFactoryBean: [] Failed to initialize JPA EntityManagerFactory: No identifier specified for entity: com.student.northwind.domain.Products
+2023-05-10 20:28:41,485 WARN  [main] AnnotationConfigServletWebServerApplicationContext: [] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: No identifier specified for entity: com.student.northwind.domain.Products
+2023-05-10 20:28:41,576 ERROR [main] SpringApplication: [] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: No identifier specified for entity: com.student.northwind.domain.Products
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.student.northwind.MainApplication.main(MainApplication.java:10)
+Caused by: org.hibernate.AnnotationException: No identifier specified for entity: com.student.northwind.domain.Products
+	at org.hibernate.cfg.InheritanceState.determineDefaultAccessType(InheritanceState.java:266)
+	at org.hibernate.cfg.InheritanceState.getElementsToProcess(InheritanceState.java:211)
+	at org.hibernate.cfg.AnnotationBinder.bindClass(AnnotationBinder.java:772)
+	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:225)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:239)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:282)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 16 common frames omitted
