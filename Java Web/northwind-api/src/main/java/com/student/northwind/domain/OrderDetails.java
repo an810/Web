@@ -5,16 +5,18 @@ import org.checkerframework.checker.units.qual.C;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "OrderDetails")
 public class OrderDetails {
     @Id
+    @Column(name = "OrderID")
     private int orderID;
-    @Column
+    @Column(name = "ProductID")
     private int productID;
-    @Column
+    @Column(name = "UnitPrice")
     private double unitPrice;
-    @Column
+    @Column(name = "Quantity")
     private int quantity;
-    @Column
+    @Column(name = "Discount")
     private double discount;
 
     public OrderDetails() {

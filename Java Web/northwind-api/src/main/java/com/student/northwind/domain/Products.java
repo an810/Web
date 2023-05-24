@@ -3,28 +3,30 @@ package com.student.northwind.domain;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "Products")
 public class Products {
     @Id
+    @Column(name = "ProductID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int productID;
-    @Column
+    @Column(name = "ProductName")
     private String productName;
-    @Column
+    @Column(name = "SupplierID")
     private int supplierID;
-    @Column
+    @Column(name = "CategoryID")
     private int categoryID;
-    @Column
+    @Column(name = "QuantityPerUnit")
     private int quantityPerUnit;
-    @Column
+    @Column(name = "UnitPrice")
     private double unitPrice;
-    @Column
+    @Column(name = "UnitsInStock")
     private int unitsInStock;
-    @Column
+    @Column(name = "UnitsOnOrder")
     private int unitsOnOrder;
-    @Column
+    @Column(name = "ReorderLevel")
     private int reorderLevel;
-    @Column
-    private boolean discontinued;
+    @Column(name = "Discontinued")
+    private int discontinued;
     public Products() {
 
     }
@@ -100,11 +102,11 @@ public class Products {
         this.reorderLevel = reorderLevel;
     }
 
-    public boolean isDiscontinued() {
+    public int getDiscontinued() {
         return discontinued;
     }
 
-    public void setDiscontinued(boolean discontinued) {
+    public void setDiscontinued(int discontinued) {
         this.discontinued = discontinued;
     }
 

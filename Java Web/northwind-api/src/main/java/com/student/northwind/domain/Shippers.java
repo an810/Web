@@ -3,13 +3,15 @@ package com.student.northwind.domain;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "Shippers")
 public class Shippers {
     @Id
+    @Column(name = "ShipperID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int shipperID;
-    @Column
+    @Column(name = "CompanyName")
     private String companyName;
-    @Column
+    @Column(name = "Phone")
     private String phone;
 
     public Shippers() {

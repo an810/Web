@@ -3,11 +3,13 @@ package com.student.northwind.domain;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "Region")
 public class Region {
     @Id
+    @Column(name = "RegionID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int regionID;
-    @Column
+    @Column(name = "RegionDescription")
     private String regionDescription;
 
     public Region() {

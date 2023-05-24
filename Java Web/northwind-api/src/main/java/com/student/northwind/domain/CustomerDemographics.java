@@ -3,11 +3,13 @@ package com.student.northwind.domain;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "CustomerDemographics")
 public class CustomerDemographics {
     @Id
+    @Column(name = "CustomerTypeID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int customerTypeID;
-    @Column
+    @Column(name = "CustomerDesc")
     private String customerDesc;
 
     public CustomerDemographics() {

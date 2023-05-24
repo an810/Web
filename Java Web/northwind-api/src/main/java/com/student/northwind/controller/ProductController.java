@@ -9,19 +9,19 @@ import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/productts")
 public class ProductController {
     @Autowired
     private ProductRepo productRepo;
-    @GetMapping ("/products")
+    @GetMapping
     public List<Products> getAllProduct() {
         return productRepo.findAll();
     }
-    @PostMapping ("/products")
+    @PostMapping
     public Products createProduct(@RequestBody Products requestProduct) {
         return productRepo.save(requestProduct);
     }
-    @PutMapping("/products/{id}")
+    @PutMapping("{id}")
     public Products updateProduct(@RequestBody Products requestProduct, @PathVariable int id) {
         Products product = productRepo.findById(id).orElseThrow(()->new EntityNotFoundException("Khong tim thay ban ghi"));
         product.setProductID(requestProduct.getProductID());
@@ -33,11 +33,11 @@ public class ProductController {
         product.setUnitsInStock(requestProduct.getUnitsInStock());
         product.setUnitsOnOrder(requestProduct.getUnitsOnOrder());
         product.setReorderLevel(requestProduct.getReorderLevel());
-        product.setDiscontinued(requestProduct.isDiscontinued());
+        product.setDiscontinued(requestProduct.getDiscontinued());
         return productRepo.save(product);
     }
 
-    @DeleteMapping("/products/{id}")
+    @DeleteMapping("{id}")
     public void deleteProduct(@PathVariable int id) {
         productRepo.existsById(id);
     }

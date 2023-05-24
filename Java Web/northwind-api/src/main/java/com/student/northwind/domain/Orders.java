@@ -4,35 +4,37 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
+@Table(name = "Orders")
 public class Orders {
     @Id
+    @Column(name = "OrderID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int orderID;
-    @Column
+    @Column(name = "customerID")
     private int customerID;
-    @Column
+    @Column(name = "EmployeeID")
     private int employeeID;
-    @Column
+    @Column(name = "OrderDate")
     private LocalDate orderDate;
-    @Column
+    @Column(name = "RequireDate")
     private LocalDate requiredDate;
-    @Column
+    @Column(name = "ShippedDate")
     private LocalDate shippedDate;
-    @Column
+    @Column(name = "ShipVia")
     private String shipVia;
-    @Column
+    @Column(name = "Freight")
     private String freight;
-    @Column
+    @Column(name = "ShipName")
     private String shipName;
-    @Column
+    @Column(name = "ShipAddress")
     private String shipAddress;
-    @Column
+    @Column(name = "ShipCity")
     private String shipCity;
-    @Column
+    @Column(name = "ShipRegion")
     private String shipRegion;
-    @Column
+    @Column(name = "ShipPostalCode")
     private String shipPostalCode;
-    @Column
+    @Column(name = "ShipCountry")
     private String shipCountry;
 
     public Orders() {

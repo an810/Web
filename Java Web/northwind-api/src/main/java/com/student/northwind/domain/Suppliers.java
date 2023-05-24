@@ -3,31 +3,33 @@ package com.student.northwind.domain;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "Suppliers")
 public class Suppliers {
     @Id
+    @Column(name = "SupplierID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int supplierID;
-    @Column
+    @Column(name = "CompanyName")
     private String companyName;
-    @Column
+    @Column(name = "ContactName")
     private String contactName;
-    @Column
+    @Column(name = "ContactTitle")
     private String contactTitle;
-    @Column
+    @Column(name = "Address")
     private String address;
-    @Column
+    @Column(name = "City")
     private String city;
-    @Column
+    @Column(name = "Region")
     private String region;
-    @Column
+    @Column(name = "PostalCode")
     private String postalCode;
-    @Column
+    @Column(name = "Country")
     private String country;
-    @Column
+    @Column(name = "Phone")
     private String phone;
-    @Column
+    @Column(name = "Fax")
     private String fax;
-    @Column
+    @Column(name = "HomePage")
     private String homePage;
 
     public Suppliers() {

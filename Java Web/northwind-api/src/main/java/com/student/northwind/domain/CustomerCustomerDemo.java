@@ -3,12 +3,15 @@ package com.student.northwind.domain;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "CustomerCustomerDemo")
 public class CustomerCustomerDemo {
     @Id
+    @Column(name = "CustomerID")
     private int customerID;
-    @Column
+    @Column(name = "CustomerTypeID")
     private int customerTypeID;
 
     public CustomerCustomerDemo() {

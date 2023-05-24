@@ -3,12 +3,15 @@ package com.student.northwind.domain;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "EmployeeTerritories")
 public class EmployeeTerritories {
     @Id
+    @Column(name = "EmployeeID")
     private int employeeID;
-    @Column
+    @Column(name = "TerritoryID")
     private int territoryID;
 
     public EmployeeTerritories() {

@@ -3,15 +3,17 @@ package com.student.northwind.domain;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "Categories")
 public class Categories {
     @Id
+    @Column(name = "CategoryID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int categoryID;
-    @Column
+    @Column(name = "CategoryName")
     private String categoryName;
-    @Column
+    @Column(name = "Description")
     private String description;
-    @Column
+    @Column(name = "Picture")
     private String picture;
 
     public Categories() {

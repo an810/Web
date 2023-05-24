@@ -5,43 +5,45 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
+@Table(name = "Employees")
 public class Employees {
     @Id
+    @Column(name = "EmployeeID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int employeeID;
-    @Column
+    @Column(name = "LastName")
     private String lastName;
-    @Column
+    @Column(name = "FirstName")
     private String firstName;
-    @Column
+    @Column(name = "Title")
     private String title;
-    @Column
+    @Column(name = "TitleOfCourtesy")
     private String titleOfCourtesy;
-    @Column
+    @Column(name = "BirthDate")
     private LocalDate birthDate;
-    @Column
+    @Column(name = "HireDate")
     private LocalDate hireDate;
-    @Column
+    @Column(name = "Address")
     private String address;
-    @Column
+    @Column(name = "City")
     private String city;
-    @Column
+    @Column(name = "Region")
     private String region;
-    @Column
+    @Column(name = "PostalCode")
     private String postalCode;
-    @Column
+    @Column(name = "Country")
     private String country;
-    @Column
+    @Column(name = "HomePhone")
     private String homePhone;
-    @Column
+    @Column(name = "Extension")
     private String extension;
-    @Column
+    @Column(name = "Photo")
     private String photo;
-    @Column
+    @Column(name = "Notes")
     private String notes;
-    @Column
+    @Column(name = "ReportsTo")
     private String reportsTo;
-    @Column
+    @Column(name = "PhotoPath")
     private String photoPath;
 
     public Employees() {

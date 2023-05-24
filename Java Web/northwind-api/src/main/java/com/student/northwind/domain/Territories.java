@@ -3,13 +3,15 @@ package com.student.northwind.domain;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "Territories")
 public class Territories {
     @Id
+    @Column(name = "TerritoryID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int territoryID;
-    @Column
+    @Column(name = "TerritoryDescription")
     private String territoryDescription;
-    @Column
+    @Column(name = "RegionID")
     private int regionID;
 
     public Territories() {

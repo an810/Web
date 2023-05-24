@@ -1,0 +1,250 @@
+2023-05-15 08:37:17,255 WARN  [Hikari housekeeper] HikariPool: [] Hikari - Thread starvation or clock leap detected (housekeeper delta=8h16m26s602ms598µs700ns).
+2023-05-15 08:37:17,510 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-15 08:37:17,516 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-15 08:37:17,516 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-15 08:37:17,516 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:61 created by (SQLServerDriver:1)
+2023-05-15 08:37:17,516 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:61 This attempt server name: 127.0.0.1 port: 1433 InstanceName: null useParallel: false
+2023-05-15 08:37:17,516 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:61 This attempt endtime: 1684114638766
+2023-05-15 08:37:17,516 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:61 This attempt No: 0
+2023-05-15 08:37:17,516 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:61 Connecting with server: 127.0.0.1 port: 1433 Timeout slice: 1250 Timeout Full: 10
+2023-05-15 08:37:17,706 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:61 ClientConnectionId: 85e3fed2-7bf7-4ee7-9634-5f5d4cd09ac2 Server returned major version:15
+2023-05-15 08:37:18,612 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-15 08:37:18,612 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-15 08:37:18,612 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-15 08:37:18,612 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:62 created by (SQLServerDriver:1)
+2023-05-15 08:37:18,612 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:62 This attempt server name: 127.0.0.1 port: 1433 InstanceName: null useParallel: false
+2023-05-15 08:37:18,612 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:62 This attempt endtime: 1684114639862
+2023-05-15 08:37:18,612 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:62 This attempt No: 0
+2023-05-15 08:37:18,612 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:62 Connecting with server: 127.0.0.1 port: 1433 Timeout slice: 1250 Timeout Full: 10
+2023-05-15 08:37:18,659 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:62 ClientConnectionId: ef2671e1-7856-42de-b06b-9fc824c70e3d Server returned major version:15
+2023-05-15 08:37:19,036 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-15 08:37:19,052 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-15 08:37:19,052 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-15 08:37:19,052 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:63 created by (SQLServerDriver:1)
+2023-05-15 08:37:19,052 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:63 This attempt server name: 127.0.0.1 port: 1433 InstanceName: null useParallel: false
+2023-05-15 08:37:19,052 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:63 This attempt endtime: 1684114640302
+2023-05-15 08:37:19,052 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:63 This attempt No: 0
+2023-05-15 08:37:19,052 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:63 Connecting with server: 127.0.0.1 port: 1433 Timeout slice: 1250 Timeout Full: 10
+2023-05-15 08:37:19,083 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:63 ClientConnectionId: 37adf1de-a8a1-4bfd-98fb-92bf81e39bc3 Server returned major version:15
+2023-05-15 08:37:19,177 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-15 08:37:19,177 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-15 08:37:19,177 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-15 08:37:19,193 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:64 created by (SQLServerDriver:1)
+2023-05-15 08:37:19,193 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:64 This attempt server name: 127.0.0.1 port: 1433 InstanceName: null useParallel: false
+2023-05-15 08:37:19,193 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:64 This attempt endtime: 1684114640443
+2023-05-15 08:37:19,193 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:64 This attempt No: 0
+2023-05-15 08:37:19,193 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:64 Connecting with server: 127.0.0.1 port: 1433 Timeout slice: 1250 Timeout Full: 10
+2023-05-15 08:37:19,224 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:64 ClientConnectionId: 305b84cf-34d0-4b97-a6aa-9566c1de366f Server returned major version:15
+2023-05-15 08:37:19,350 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-15 08:37:19,350 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-15 08:37:19,350 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-15 08:37:19,350 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:65 created by (SQLServerDriver:1)
+2023-05-15 08:37:19,350 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:65 This attempt server name: 127.0.0.1 port: 1433 InstanceName: null useParallel: false
+2023-05-15 08:37:19,350 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:65 This attempt endtime: 1684114640600
+2023-05-15 08:37:19,350 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:65 This attempt No: 0
+2023-05-15 08:37:19,350 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:65 Connecting with server: 127.0.0.1 port: 1433 Timeout slice: 1250 Timeout Full: 10
+2023-05-15 08:37:19,365 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:65 ClientConnectionId: 376ea04a-79ea-431b-b251-9a360b899af6 Server returned major version:15
+2023-05-15 08:37:19,397 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-15 08:37:19,397 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-15 08:37:19,397 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-15 08:37:19,397 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:66 created by (SQLServerDriver:1)
+2023-05-15 08:37:19,397 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:66 This attempt server name: 127.0.0.1 port: 1433 InstanceName: null useParallel: false
+2023-05-15 08:37:19,397 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:66 This attempt endtime: 1684114640647
+2023-05-15 08:37:19,397 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:66 This attempt No: 0
+2023-05-15 08:37:19,397 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:66 Connecting with server: 127.0.0.1 port: 1433 Timeout slice: 1250 Timeout Full: 10
+2023-05-15 08:37:19,397 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:66 ClientConnectionId: 667d9cd6-8645-426e-b915-e78e859e557f Server returned major version:15
+2023-05-15 08:37:19,428 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-15 08:37:19,428 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-15 08:37:19,428 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-15 08:37:19,428 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:67 created by (SQLServerDriver:1)
+2023-05-15 08:37:19,428 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:67 This attempt server name: 127.0.0.1 port: 1433 InstanceName: null useParallel: false
+2023-05-15 08:37:19,428 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:67 This attempt endtime: 1684114640678
+2023-05-15 08:37:19,428 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:67 This attempt No: 0
+2023-05-15 08:37:19,428 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:67 Connecting with server: 127.0.0.1 port: 1433 Timeout slice: 1250 Timeout Full: 10
+2023-05-15 08:37:19,428 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:67 ClientConnectionId: 0b74dfcf-eeaa-4e4c-bee3-bd2d1f67e9d6 Server returned major version:15
+2023-05-15 08:37:19,460 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-15 08:37:19,460 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-15 08:37:19,460 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-15 08:37:19,460 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:68 created by (SQLServerDriver:1)
+2023-05-15 08:37:19,460 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:68 This attempt server name: 127.0.0.1 port: 1433 InstanceName: null useParallel: false
+2023-05-15 08:37:19,460 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:68 This attempt endtime: 1684114640710
+2023-05-15 08:37:19,460 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:68 This attempt No: 0
+2023-05-15 08:37:19,460 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:68 Connecting with server: 127.0.0.1 port: 1433 Timeout slice: 1250 Timeout Full: 10
+2023-05-15 08:37:19,460 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:68 ClientConnectionId: 329952de-76c5-49d0-8d53-88e6e520d09f Server returned major version:15
+2023-05-15 08:37:19,491 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-15 08:37:19,507 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-15 08:37:19,507 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-15 08:37:19,507 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:69 created by (SQLServerDriver:1)
+2023-05-15 08:37:19,507 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:69 This attempt server name: 127.0.0.1 port: 1433 InstanceName: null useParallel: false
+2023-05-15 08:37:19,507 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:69 This attempt endtime: 1684114640757
+2023-05-15 08:37:19,507 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:69 This attempt No: 0
+2023-05-15 08:37:19,507 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:69 Connecting with server: 127.0.0.1 port: 1433 Timeout slice: 1250 Timeout Full: 10
+2023-05-15 08:37:19,507 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:69 ClientConnectionId: 7cb527d2-ad76-45ca-9cb9-7e4e1fbeb105 Server returned major version:15
+2023-05-15 08:37:19,538 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-15 08:37:19,538 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-15 08:37:19,538 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-15 08:37:19,538 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:70 created by (SQLServerDriver:1)
+2023-05-15 08:37:19,538 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:70 This attempt server name: 127.0.0.1 port: 1433 InstanceName: null useParallel: false
+2023-05-15 08:37:19,538 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:70 This attempt endtime: 1684114640788
+2023-05-15 08:37:19,538 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:70 This attempt No: 0
+2023-05-15 08:37:19,538 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:70 Connecting with server: 127.0.0.1 port: 1433 Timeout slice: 1250 Timeout Full: 10
+2023-05-15 08:37:19,554 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:70 ClientConnectionId: 378341d8-dd34-4cf5-be79-1af6e859f885 Server returned major version:15
+2023-05-15 09:22:54,393 DEBUG [background-preinit] logging: [] Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+2023-05-15 09:22:54,393 INFO  [main] MainApplication: [] Starting MainApplication using Java 11.0.2 on DESKTOP-5853TS3 with PID 12312 (D:\Code\GitHub\Web\Java Web\northwind-api\target\classes started by Thinkpad in D:\Code\GitHub\Web\Java Web\northwind-api)
+2023-05-15 09:22:54,452 DEBUG [main] MainApplication: [] Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-05-15 09:22:54,455 INFO  [main] MainApplication: [] No active profile set, falling back to 1 default profile: "default"
+2023-05-15 09:22:58,925 DEBUG [main] InternalLoggerFactory: [] Using SLF4J as the default logging framework
+2023-05-15 09:22:59,355 DEBUG [main] WebConfigure: [] Registering CORS filter
+2023-05-15 09:22:59,412 INFO  [main] WebConfigure: [] Web application fully configured
+2023-05-15 09:22:59,444 DEBUG [main] MDCLoggingFilter: [] Filter 'MDCLoggingFilter' configured for use
+2023-05-15 09:22:59,446 DEBUG [main] LoggingRequestFilter: [] Filter 'loggingRequestFilter' configured for use
+2023-05-15 09:22:59,937 DEBUG [main] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-15 09:22:59,938 DEBUG [main] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-15 09:22:59,947 DEBUG [main] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-15 09:22:59,956 DEBUG [main] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-15 09:22:59,956 DEBUG [main] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-15 09:22:59,957 DEBUG [main] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-15 09:23:00,068 DEBUG [main] SQLServerConnection: [] ConnectionID:1 created by (SQLServerDriver:1)
+2023-05-15 09:23:00,088 DEBUG [main] SQLServerConnection: [] ConnectionID:1 This attempt server name: 127.0.0.1 port: 1433 InstanceName: null useParallel: false
+2023-05-15 09:23:00,093 DEBUG [main] SQLServerConnection: [] ConnectionID:1 This attempt endtime: 1684117381323
+2023-05-15 09:23:00,094 DEBUG [main] SQLServerConnection: [] ConnectionID:1 This attempt No: 0
+2023-05-15 09:23:00,105 DEBUG [main] SQLServerConnection: [] ConnectionID:1 Connecting with server: 127.0.0.1 port: 1433 Timeout slice: 1229 Timeout Full: 10
+2023-05-15 09:23:00,150 DEBUG [main] SQLServerConnection: [] ConnectionID:1 ClientConnectionId: a1a8d405-886a-421d-88cb-e6aa16960f9b Server returned major version:15
+2023-05-15 09:23:00,542 DEBUG [main] SQLServerStatement: [] SQLServerStatement:1 created by (ConnectionID:1 ClientConnectionId: a1a8d405-886a-421d-88cb-e6aa16960f9b)
+2023-05-15 09:23:00,544 DEBUG [main] SQLServerStatement: [] SQLServerStatement:1 Executing (not server cursor) SELECT 1
+2023-05-15 09:23:00,627 DEBUG [main] SQLServerResultSet: [] SQLServerResultSet:1 created by (SQLServerStatement:1)
+2023-05-15 09:23:00,686 DEBUG [main] SQLServerDatabaseMetaData: []  SQLServerDatabaseMetaData:1 created by (ConnectionID:1 ClientConnectionId: a1a8d405-886a-421d-88cb-e6aa16960f9b)
+2023-05-15 09:23:00,775 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-15 09:23:00,776 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-15 09:23:00,777 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-15 09:23:00,777 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:2 created by (SQLServerDriver:1)
+2023-05-15 09:23:00,778 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:2 This attempt server name: 127.0.0.1 port: 1433 InstanceName: null useParallel: false
+2023-05-15 09:23:00,778 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:2 This attempt endtime: 1684117382027
+2023-05-15 09:23:00,778 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:2 This attempt No: 0
+2023-05-15 09:23:00,779 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:2 Connecting with server: 127.0.0.1 port: 1433 Timeout slice: 1248 Timeout Full: 10
+2023-05-15 09:23:00,782 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:2 ClientConnectionId: c5900109-eb10-4487-93fa-092591f670da Server returned major version:15
+2023-05-15 09:23:00,825 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-15 09:23:00,826 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-15 09:23:00,827 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-15 09:23:00,827 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:3 created by (SQLServerDriver:1)
+2023-05-15 09:23:00,828 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:3 This attempt server name: 127.0.0.1 port: 1433 InstanceName: null useParallel: false
+2023-05-15 09:23:00,828 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:3 This attempt endtime: 1684117382078
+2023-05-15 09:23:00,828 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:3 This attempt No: 0
+2023-05-15 09:23:00,828 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:3 Connecting with server: 127.0.0.1 port: 1433 Timeout slice: 1250 Timeout Full: 10
+2023-05-15 09:23:00,830 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:3 ClientConnectionId: 8b45e15c-cc6a-46ad-a86a-abefca2b4270 Server returned major version:15
+2023-05-15 09:23:00,866 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-15 09:23:00,867 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-15 09:23:00,867 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-15 09:23:00,868 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:4 created by (SQLServerDriver:1)
+2023-05-15 09:23:00,868 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:4 This attempt server name: 127.0.0.1 port: 1433 InstanceName: null useParallel: false
+2023-05-15 09:23:00,869 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:4 This attempt endtime: 1684117382118
+2023-05-15 09:23:00,869 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:4 This attempt No: 0
+2023-05-15 09:23:00,869 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:4 Connecting with server: 127.0.0.1 port: 1433 Timeout slice: 1249 Timeout Full: 10
+2023-05-15 09:23:00,871 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:4 ClientConnectionId: 2d7b5cfd-3f4e-477e-897e-6cfbcc09c2e5 Server returned major version:15
+2023-05-15 09:23:00,903 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-15 09:23:00,904 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-15 09:23:00,904 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-15 09:23:00,905 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:5 created by (SQLServerDriver:1)
+2023-05-15 09:23:00,905 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:5 This attempt server name: 127.0.0.1 port: 1433 InstanceName: null useParallel: false
+2023-05-15 09:23:00,906 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:5 This attempt endtime: 1684117382155
+2023-05-15 09:23:00,906 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:5 This attempt No: 0
+2023-05-15 09:23:00,906 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:5 Connecting with server: 127.0.0.1 port: 1433 Timeout slice: 1249 Timeout Full: 10
+2023-05-15 09:23:00,908 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:5 ClientConnectionId: 810744fc-8d74-41f9-9da7-4fbba925f9e4 Server returned major version:15
+2023-05-15 09:23:00,933 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-15 09:23:00,934 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-15 09:23:00,934 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-15 09:23:00,935 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:6 created by (SQLServerDriver:1)
+2023-05-15 09:23:00,935 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:6 This attempt server name: 127.0.0.1 port: 1433 InstanceName: null useParallel: false
+2023-05-15 09:23:00,936 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:6 This attempt endtime: 1684117382185
+2023-05-15 09:23:00,936 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:6 This attempt No: 0
+2023-05-15 09:23:00,936 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:6 Connecting with server: 127.0.0.1 port: 1433 Timeout slice: 1249 Timeout Full: 10
+2023-05-15 09:23:00,938 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:6 ClientConnectionId: 6d0e3400-aa2e-456e-bbc0-a25e5b9c9e73 Server returned major version:15
+2023-05-15 09:23:00,966 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-15 09:23:00,967 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-15 09:23:00,967 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-15 09:23:00,968 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:7 created by (SQLServerDriver:1)
+2023-05-15 09:23:00,968 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:7 This attempt server name: 127.0.0.1 port: 1433 InstanceName: null useParallel: false
+2023-05-15 09:23:00,969 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:7 This attempt endtime: 1684117382218
+2023-05-15 09:23:00,969 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:7 This attempt No: 0
+2023-05-15 09:23:00,969 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:7 Connecting with server: 127.0.0.1 port: 1433 Timeout slice: 1249 Timeout Full: 10
+2023-05-15 09:23:00,971 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:7 ClientConnectionId: 528e4796-1d8b-4adb-8f32-0c4b40931a03 Server returned major version:15
+2023-05-15 09:23:01,010 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-15 09:23:01,011 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-15 09:23:01,011 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-15 09:23:01,012 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:8 created by (SQLServerDriver:1)
+2023-05-15 09:23:01,012 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:8 This attempt server name: 127.0.0.1 port: 1433 InstanceName: null useParallel: false
+2023-05-15 09:23:01,013 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:8 This attempt endtime: 1684117382262
+2023-05-15 09:23:01,013 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:8 This attempt No: 0
+2023-05-15 09:23:01,014 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:8 Connecting with server: 127.0.0.1 port: 1433 Timeout slice: 1248 Timeout Full: 10
+2023-05-15 09:23:01,027 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:8 ClientConnectionId: 07849200-7f07-424f-9b19-514187477485 Server returned major version:15
+2023-05-15 09:23:01,068 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-15 09:23:01,068 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-15 09:23:01,069 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-15 09:23:01,069 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:9 created by (SQLServerDriver:1)
+2023-05-15 09:23:01,070 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:9 This attempt server name: 127.0.0.1 port: 1433 InstanceName: null useParallel: false
+2023-05-15 09:23:01,070 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:9 This attempt endtime: 1684117382320
+2023-05-15 09:23:01,070 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:9 This attempt No: 0
+2023-05-15 09:23:01,071 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:9 Connecting with server: 127.0.0.1 port: 1433 Timeout slice: 1250 Timeout Full: 10
+2023-05-15 09:23:01,077 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:9 ClientConnectionId: f465d99d-ee15-44dc-b276-e51b2dbe56ad Server returned major version:15
+2023-05-15 09:23:01,112 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:serverName Value:127.0.0.1
+2023-05-15 09:23:01,113 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:portNumber Value:1433
+2023-05-15 09:23:01,114 DEBUG [Hikari connection adder] SQLServerDriver: [] Property:databaseName Value:northwind
+2023-05-15 09:23:01,115 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:10 created by (SQLServerDriver:1)
+2023-05-15 09:23:01,115 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:10 This attempt server name: 127.0.0.1 port: 1433 InstanceName: null useParallel: false
+2023-05-15 09:23:01,115 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:10 This attempt endtime: 1684117382365
+2023-05-15 09:23:01,115 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:10 This attempt No: 0
+2023-05-15 09:23:01,117 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:10 Connecting with server: 127.0.0.1 port: 1433 Timeout slice: 1249 Timeout Full: 10
+2023-05-15 09:23:01,118 DEBUG [Hikari connection adder] SQLServerConnection: [] ConnectionID:10 ClientConnectionId: d5390ba8-f6f7-43e2-9b58-e4152ec7c163 Server returned major version:15
+2023-05-15 09:23:01,597 DEBUG [main] SQLServerStatement: [] SQLServerStatement:2 created by (ConnectionID:1 ClientConnectionId: a1a8d405-886a-421d-88cb-e6aa16960f9b)
+2023-05-15 09:23:01,598 DEBUG [main] SQLServerStatement: [] SQLServerStatement:2 Executing (not server cursor) SELECT 1
+2023-05-15 09:23:01,599 DEBUG [main] SQLServerResultSet: [] SQLServerResultSet:2 created by (SQLServerStatement:2)
+2023-05-15 09:23:01,651 DEBUG [main] SQLServerStatement: [] SQLServerStatement:3 created by (ConnectionID:1 ClientConnectionId: a1a8d405-886a-421d-88cb-e6aa16960f9b)
+2023-05-15 09:23:01,651 DEBUG [main] SQLServerStatement: [] SQLServerStatement:3 Executing (not server cursor) SELECT SCHEMA_NAME()
+2023-05-15 09:23:01,652 DEBUG [main] SQLServerResultSet: [] SQLServerResultSet:3 created by (SQLServerStatement:3)
+2023-05-15 09:23:01,661 DEBUG [main] SQLServerStatement: [] SQLServerStatement:4 created by (ConnectionID:1 ClientConnectionId: a1a8d405-886a-421d-88cb-e6aa16960f9b)
+2023-05-15 09:23:01,661 DEBUG [main] SQLServerStatement: [] SQLServerStatement:4 Executing (not server cursor) SELECT SCHEMA_NAME()
+2023-05-15 09:23:01,662 DEBUG [main] SQLServerResultSet: [] SQLServerResultSet:4 created by (SQLServerStatement:4)
+2023-05-15 09:23:01,671 DEBUG [main] SQLServerClob: [] SQLServerClob:1 created by (ConnectionID:1 ClientConnectionId: a1a8d405-886a-421d-88cb-e6aa16960f9b)
+2023-05-15 09:23:03,313 DEBUG [main] TokenProvider: [] Using a Base64-encoded JWT secret key
+2023-05-15 09:23:03,452 DEBUG [main] Loggers: [] Using Slf4j logging framework
+2023-05-15 09:23:03,489 DEBUG [main] InternalLoggerFactory: [] Using SLF4J as the default logging framework
+2023-05-15 09:23:03,495 DEBUG [main] PlatformDependent0: [] -Dio.netty.noUnsafe: false
+2023-05-15 09:23:03,496 DEBUG [main] PlatformDependent0: [] Java version: 11
+2023-05-15 09:23:03,498 DEBUG [main] PlatformDependent0: [] sun.misc.Unsafe.theUnsafe: available
+2023-05-15 09:23:03,500 DEBUG [main] PlatformDependent0: [] sun.misc.Unsafe.copyMemory: available
+2023-05-15 09:23:03,501 DEBUG [main] PlatformDependent0: [] sun.misc.Unsafe.storeFence: available
+2023-05-15 09:23:03,502 DEBUG [main] PlatformDependent0: [] java.nio.Buffer.address: available
+2023-05-15 09:23:03,503 DEBUG [main] PlatformDependent0: [] direct buffer constructor: unavailable: Reflective setAccessible(true) disabled
+2023-05-15 09:23:03,505 DEBUG [main] PlatformDependent0: [] java.nio.Bits.unaligned: available, true
+2023-05-15 09:23:03,506 DEBUG [main] PlatformDependent0: [] jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable: class io.netty.util.internal.PlatformDependent0$7 cannot access class jdk.internal.misc.Unsafe (in module java.base) because module java.base does not export jdk.internal.misc to unnamed module @3b41e1bf
+2023-05-15 09:23:03,509 DEBUG [main] PlatformDependent0: [] java.nio.DirectByteBuffer.<init>(long, int): unavailable
+2023-05-15 09:23:03,510 DEBUG [main] PlatformDependent: [] sun.misc.Unsafe: available
+2023-05-15 09:23:03,511 DEBUG [main] PlatformDependent: [] maxDirectMemory: 4253024256 bytes (maybe)
+2023-05-15 09:23:03,512 DEBUG [main] PlatformDependent: [] -Dio.netty.tmpdir: C:\Users\Thinkpad\AppData\Local\Temp (java.io.tmpdir)
+2023-05-15 09:23:03,512 DEBUG [main] PlatformDependent: [] -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2023-05-15 09:23:03,512 DEBUG [main] PlatformDependent: [] Platform: Windows
+2023-05-15 09:23:03,514 DEBUG [main] PlatformDependent: [] -Dio.netty.maxDirectMemory: -1 bytes
+2023-05-15 09:23:03,514 DEBUG [main] PlatformDependent: [] -Dio.netty.uninitializedArrayAllocationThreshold: -1
+2023-05-15 09:23:03,517 DEBUG [main] CleanerJava9: [] java.nio.ByteBuffer.cleaner(): available
+2023-05-15 09:23:03,518 DEBUG [main] PlatformDependent: [] -Dio.netty.noPreferDirect: false
+2023-05-15 09:23:03,580 DEBUG [main] InternalThreadLocalMap: [] -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+2023-05-15 09:23:03,581 DEBUG [main] InternalThreadLocalMap: [] -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+2023-05-15 09:23:03,643 DEBUG [main] ResourceLeakDetector: [] -Dio.netty.leakDetection.level: simple
+2023-05-15 09:23:03,644 DEBUG [main] ResourceLeakDetector: [] -Dio.netty.leakDetection.targetRecords: 4
+2023-05-15 09:23:05,331 DEBUG [main] AsyncConfiguration: [] Creating Async Task Executor
+2023-05-15 09:23:06,048 WARN  [main] JpaBaseConfiguration$JpaWebConfiguration: [] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-15 09:23:07,851 DEBUG [main] TcpResources: [] [http] resources will use the default LoopResources: DefaultLoopResources {prefix=reactor-http, daemon=true, selectCount=8, workerCount=8}
+2023-05-15 09:23:07,851 DEBUG [main] TcpResources: [] [http] resources will use the default ConnectionProvider: reactor.netty.resources.DefaultPooledConnectionProvider@54a332e4
+2023-05-15 09:23:08,037 INFO  [main] MainApplication: [] Started MainApplication in 14.809 seconds (JVM running for 16.246)
+2023-05-15 09:23:11,405 INFO  [http-nio-8080-exec-1] LoggingRequestFilter: [1158300740] Request: Real: 0:0:0:0:0:0:0:1 - Remote: 0:0:0:0:0:0:0:1 - Url: http://localhost:8080/api/authenticate
+2023-05-15 09:23:11,738 DEBUG [http-nio-8080-exec-1] SQLServerStatement: [1158300740] SQLServerStatement:5 created by (ConnectionID:1 ClientConnectionId: a1a8d405-886a-421d-88cb-e6aa16960f9b)
+2023-05-15 09:23:11,738 DEBUG [http-nio-8080-exec-1] SQLServerStatement: [1158300740] SQLServerStatement:5 Executing (not server cursor) SELECT 1
+2023-05-15 09:23:11,739 DEBUG [http-nio-8080-exec-1] SQLServerResultSet: [1158300740] SQLServerResultSet:5 created by (SQLServerStatement:5)
+2023-05-15 09:23:11,750 DEBUG [http-nio-8080-exec-1] DomainUserDetailsService: [1158300740] Authenticating admin
+2023-05-15 09:23:11,973 DEBUG [http-nio-8080-exec-1] SQL: [1158300740] select user0_.id as id1_1_0_, authority2_.name as name1_0_1_, user0_.created_by as created_2_1_0_, user0_.created_date as created_3_1_0_, user0_.last_modified_by as last_mod4_1_0_, user0_.last_modified_date as last_mod5_1_0_, user0_.activated as activate6_1_0_, user0_.activation_key as activati7_1_0_, user0_.email as email8_1_0_, user0_.first_name as first_na9_1_0_, user0_.image_url as image_u10_1_0_, user0_.lang_key as lang_ke11_1_0_, user0_.last_name as last_na12_1_0_, user0_.login as login13_1_0_, user0_.password_hash as passwor14_1_0_, user0_.reset_date as reset_d15_1_0_, user0_.reset_key as reset_k16_1_0_, authoritie1_.user_id as user_id1_2_0__, authoritie1_.authority_name as authorit2_2_0__ from app_user user0_ left outer join app_user_authority authoritie1_ on user0_.id=authoritie1_.user_id left outer join app_authority authority2_ on authoritie1_.authority_name=authority2_.name where user0_.login=?
+2023-05-15 09:23:11,997 DEBUG [http-nio-8080-exec-1] SQLServerStatement: [1158300740] SQLServerPreparedStatement:6 created by (ConnectionID:1 ClientConnectionId: a1a8d405-886a-421d-88cb-e6aa16960f9b)
+2023-05-15 09:23:12,030 DEBUG [http-nio-8080-exec-1] SQLServerStatement: [1158300740] SQLServerPreparedStatement:6: calling sp_executesql: SQL:select user0_.id as id1_1_0_, authority2_.name as name1_0_1_, user0_.created_by as created_2_1_0_, user0_.created_date as created_3_1_0_, user0_.last_modified_by as last_mod4_1_0_, user0_.last_modified_date as last_mod5_1_0_, user0_.activated as activate6_1_0_, user0_.activation_key as activati7_1_0_, user0_.email as email8_1_0_, user0_.first_name as first_na9_1_0_, user0_.image_url as image_u10_1_0_, user0_.lang_key as lang_ke11_1_0_, user0_.last_name as last_na12_1_0_, user0_.login as login13_1_0_, user0_.password_hash as passwor14_1_0_, user0_.reset_date as reset_d15_1_0_, user0_.reset_key as reset_k16_1_0_, authoritie1_.user_id as user_id1_2_0__, authoritie1_.authority_name as authorit2_2_0__ from app_user user0_ left outer join app_user_authority authoritie1_ on user0_.id=authoritie1_.user_id left outer join app_authority authority2_ on authoritie1_.authority_name=authority2_.name where user0_.login=@P0
+2023-05-15 09:23:12,057 DEBUG [http-nio-8080-exec-1] SQLServerResultSet: [1158300740] SQLServerResultSet:6 created by (SQLServerPreparedStatement:6)
+2023-05-15 09:23:12,307 INFO  [http-nio-8080-exec-1] LoggingRequestFilter: [1158300740] Response: Real: 0:0:0:0:0:0:0:1 - Remote: 0:0:0:0:0:0:0:1 - Url: http://localhost:8080/api/authenticate - Status:200 - Duration: 886
+2023-05-15 09:23:24,045 INFO  [http-nio-8080-exec-3] LoggingRequestFilter: [1052845902] Request: Real: 0:0:0:0:0:0:0:1 - Remote: 0:0:0:0:0:0:0:1 - Url: http://localhost:8080/api/products?authorization=bearer%20eyjhbgcioijiuzuxmij9.eyjzdwiioijhzg1pbiisimf1dggioijst0xfx0fetulolfjptevfvvnfuiisimv4cci6mty4ndiwmzc5mn0.ickzuwwfvnzzenqx8whirrvl3klzzs2u6ocubl24n1gbxgvidosz3bx2uxu4jdk74-a-fw6b6lgd6knn6g1qvg
+2023-05-15 09:23:24,052 INFO  [http-nio-8080-exec-3] LoggingRequestFilter: [1052845902] Response: Real: 0:0:0:0:0:0:0:1 - Remote: 0:0:0:0:0:0:0:1 - Url: http://localhost:8080/api/products?authorization=bearer%20eyjhbgcioijiuzuxmij9.eyjzdwiioijhzg1pbiisimf1dggioijst0xfx0fetulolfjptevfvvnfuiisimv4cci6mty4ndiwmzc5mn0.ickzuwwfvnzzenqx8whirrvl3klzzs2u6ocubl24n1gbxgvidosz3bx2uxu4jdk74-a-fw6b6lgd6knn6g1qvg - Status:404 - Duration: 6
