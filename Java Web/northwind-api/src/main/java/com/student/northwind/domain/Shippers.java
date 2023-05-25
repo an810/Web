@@ -1,9 +1,16 @@
 package com.student.northwind.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "Shippers")
+@Getter
+@Setter
 public class Shippers {
     @Id
     @Column(name = "ShipperID")
@@ -14,30 +21,8 @@ public class Shippers {
     @Column(name = "Phone")
     private String phone;
 
-    public Shippers() {
-    }
+    @OneToMany(mappedBy = "shippers")
+    private List<Orders> ordersList = new ArrayList<>();
 
-    public int getShipperID() {
-        return shipperID;
-    }
 
-    public void setShipperID(int shipperID) {
-        this.shipperID = shipperID;
-    }
-
-    public String getCompanyName() {
-        return companyName;
-    }
-
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
 }

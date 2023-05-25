@@ -1,19 +1,26 @@
 package com.student.northwind.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "Orders")
+@Getter
+@Setter
 public class Orders {
     @Id
     @Column(name = "OrderID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int orderID;
-    @Column(name = "customerID")
-    private int customerID;
-    @Column(name = "EmployeeID")
-    private int employeeID;
+//    @Column(name = "customerID")
+//    private int customerID;
+//    @Column(name = "EmployeeID")
+//    private int employeeID;
     @Column(name = "OrderDate")
     private LocalDate orderDate;
     @Column(name = "RequireDate")
@@ -37,118 +44,21 @@ public class Orders {
     @Column(name = "ShipCountry")
     private String shipCountry;
 
-    public Orders() {
-    }
 
-    public int getOrderID() {
-        return orderID;
-    }
+    @ManyToOne
+    private Shippers shippers;
 
-    public void setOrderID(int orderID) {
-        this.orderID = orderID;
-    }
+    @ManyToOne
+    @JoinColumn(name = "EmployeeID", referencedColumnName = "EmployeeID")
+    private Employees employees;
 
-    public int getCustomerID() {
-        return customerID;
-    }
+    @ManyToOne
+    private Employees employee;
 
-    public void setCustomerID(int customerID) {
-        this.customerID = customerID;
-    }
+    @ManyToOne
+    @JoinColumn(name = "CustomerID", referencedColumnName = "CustomerID")
+    private Customers customer;
 
-    public int getEmployeeID() {
-        return employeeID;
-    }
-
-    public void setEmployeeID(int employeeID) {
-        this.employeeID = employeeID;
-    }
-
-    public LocalDate getOrderDate() {
-        return orderDate;
-    }
-
-    public void setOrderDate(LocalDate orderDate) {
-        this.orderDate = orderDate;
-    }
-
-    public LocalDate getRequiredDate() {
-        return requiredDate;
-    }
-
-    public void setRequiredDate(LocalDate requiredDate) {
-        this.requiredDate = requiredDate;
-    }
-
-    public LocalDate getShippedDate() {
-        return shippedDate;
-    }
-
-    public void setShippedDate(LocalDate shippedDate) {
-        this.shippedDate = shippedDate;
-    }
-
-    public String getShipVia() {
-        return shipVia;
-    }
-
-    public void setShipVia(String shipVia) {
-        this.shipVia = shipVia;
-    }
-
-    public String getFreight() {
-        return freight;
-    }
-
-    public void setFreight(String freight) {
-        this.freight = freight;
-    }
-
-    public String getShipName() {
-        return shipName;
-    }
-
-    public void setShipName(String shipName) {
-        this.shipName = shipName;
-    }
-
-    public String getShipAddress() {
-        return shipAddress;
-    }
-
-    public void setShipAddress(String shipAddress) {
-        this.shipAddress = shipAddress;
-    }
-
-    public String getShipCity() {
-        return shipCity;
-    }
-
-    public void setShipCity(String shipCity) {
-        this.shipCity = shipCity;
-    }
-
-    public String getShipRegion() {
-        return shipRegion;
-    }
-
-    public void setShipRegion(String shipRegion) {
-        this.shipRegion = shipRegion;
-    }
-
-    public String getShipPostalCode() {
-        return shipPostalCode;
-    }
-
-    public void setShipPostalCode(String shipPostalCode) {
-        this.shipPostalCode = shipPostalCode;
-    }
-
-    public String getShipCountry() {
-        return shipCountry;
-    }
-
-    public void setShipCountry(String shipCountry) {
-        this.shipCountry = shipCountry;
-    }
+    @OneToMany(mappedBy = "order")
+    private List<OrderDetails> orderDetailsList = new ArrayList<>();
 }

@@ -1,9 +1,16 @@
 package com.student.northwind.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "Categories")
+@Getter
+@Setter
 public class Categories {
     @Id
     @Column(name = "CategoryID")
@@ -16,38 +23,6 @@ public class Categories {
     @Column(name = "Picture")
     private String picture;
 
-    public Categories() {
-    }
-
-    public int getCategoryID() {
-        return categoryID;
-    }
-
-    public void setCategoryID(int categoryID) {
-        this.categoryID = categoryID;
-    }
-
-    public String getCategoryName() {
-        return categoryName;
-    }
-
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getPicture() {
-        return picture;
-    }
-
-    public void setPicture(String picture) {
-        this.picture = picture;
-    }
+    @OneToMany(mappedBy = "category")
+    private List<Products> productsList = new ArrayList<>();
 }

@@ -1,35 +1,26 @@
 package com.student.northwind.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "CustomerCustomerDemo")
+@Getter
+@Setter
 public class CustomerCustomerDemo {
-    @Id
-    @Column(name = "CustomerID")
-    private int customerID;
-    @Column(name = "CustomerTypeID")
-    private int customerTypeID;
+//    @Id
+//    @Column(name = "CustomerID")
+//    private int customerID;
 
-    public CustomerCustomerDemo() {
-    }
+//    @Column(name = "CustomerTypeID")
+//    private int customerTypeID;
+    @ManyToOne
+    @JoinColumn(name = "CustomerTypeID", referencedColumnName = "CustomerTypeID")
+    private CustomerDemographics customerDemographics;
 
-    public int getCustomerID() {
-        return customerID;
-    }
-
-    public void setCustomerID(int customerID) {
-        this.customerID = customerID;
-    }
-
-    public int getCustomerTypeID() {
-        return customerTypeID;
-    }
-
-    public void setCustomerTypeID(int customerTypeID) {
-        this.customerTypeID = customerTypeID;
-    }
+    @ManyToOne
+    @JoinColumn(name = "CustomerID", referencedColumnName = "CustomerID")
+    private Customers customers;
 }

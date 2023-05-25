@@ -1,9 +1,14 @@
 package com.student.northwind.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "Territories")
+@Getter
+@Setter
 public class Territories {
     @Id
     @Column(name = "TerritoryID")
@@ -11,33 +16,12 @@ public class Territories {
     private int territoryID;
     @Column(name = "TerritoryDescription")
     private String territoryDescription;
-    @Column(name = "RegionID")
-    private int regionID;
 
-    public Territories() {
-    }
+//    @Column(name = "RegionID")
+//    private int regionID;
+    @ManyToOne
+    @JoinColumn(name = "RegionID", referencedColumnName = "RegionID")
+    private Region region;
 
-    public int getTerritoryID() {
-        return territoryID;
-    }
 
-    public void setTerritoryID(int territoryID) {
-        this.territoryID = territoryID;
-    }
-
-    public String getTerritoryDescription() {
-        return territoryDescription;
-    }
-
-    public void setTerritoryDescription(String territoryDescription) {
-        this.territoryDescription = territoryDescription;
-    }
-
-    public int getRegionID() {
-        return regionID;
-    }
-
-    public void setRegionID(int regionID) {
-        this.regionID = regionID;
-    }
 }

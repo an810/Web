@@ -1,11 +1,19 @@
 package com.student.northwind.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+
+
 import javax.annotation.processing.Generated;
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "Employees")
+@Getter
+@Setter
 public class Employees {
     @Id
     @Column(name = "EmployeeID")
@@ -46,150 +54,22 @@ public class Employees {
     @Column(name = "PhotoPath")
     private String photoPath;
 
-    public Employees() {
-    }
 
-    public int getEmployeeID() {
-        return employeeID;
-    }
+    @ManyToMany
+    @JoinTable(
+            name = "EmployeeTerritories",
+            joinColumns = { @JoinColumn(name= "EmployeeID", referencedColumnName= "EmployeeID") },
+            inverseJoinColumns = { @JoinColumn(name= "TerritoryID", referencedColumnName= "TerritoryID") }
+    )
+    private List<Territories> territoriesList = new ArrayList<>();
 
-    public void setEmployeeID(int employeeID) {
-        this.employeeID = employeeID;
-    }
+    @OneToMany(mappedBy = "employees")
+    private List<Employees> employeesList = new ArrayList<>();
 
-    public String getLastName() {
-        return lastName;
-    }
+    @ManyToOne
+    private Employees employees;
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+    @OneToMany(mappedBy = "employee")
+    private List<Orders> ordersList = new ArrayList<>();
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getTitleOfCourtesy() {
-        return titleOfCourtesy;
-    }
-
-    public void setTitleOfCourtesy(String titleOfCourtesy) {
-        this.titleOfCourtesy = titleOfCourtesy;
-    }
-
-    public LocalDate getBirthDate() {
-        return birthDate;
-    }
-
-    public void setBirthDate(LocalDate birthDate) {
-        this.birthDate = birthDate;
-    }
-
-    public LocalDate getHireDate() {
-        return hireDate;
-    }
-
-    public void setHireDate(LocalDate hireDate) {
-        this.hireDate = hireDate;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getRegion() {
-        return region;
-    }
-
-    public void setRegion(String region) {
-        this.region = region;
-    }
-
-    public String getPostalCode() {
-        return postalCode;
-    }
-
-    public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public String getHomePhone() {
-        return homePhone;
-    }
-
-    public void setHomePhone(String homePhone) {
-        this.homePhone = homePhone;
-    }
-
-    public String getExtension() {
-        return extension;
-    }
-
-    public void setExtension(String extension) {
-        this.extension = extension;
-    }
-
-    public String getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(String photo) {
-        this.photo = photo;
-    }
-
-    public String getNotes() {
-        return notes;
-    }
-
-    public void setNotes(String notes) {
-        this.notes = notes;
-    }
-
-    public String getReportsTo() {
-        return reportsTo;
-    }
-
-    public void setReportsTo(String reportsTo) {
-        this.reportsTo = reportsTo;
-    }
-
-    public String getPhotoPath() {
-        return photoPath;
-    }
-
-    public void setPhotoPath(String photoPath) {
-        this.photoPath = photoPath;
-    }
 }

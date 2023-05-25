@@ -1,9 +1,16 @@
 package com.student.northwind.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "Region")
+@Getter
+@Setter
 public class Region {
     @Id
     @Column(name = "RegionID")
@@ -12,22 +19,7 @@ public class Region {
     @Column(name = "RegionDescription")
     private String regionDescription;
 
-    public Region() {
-    }
+    @OneToMany(mappedBy = "region")
+    private List<Territories> territoriesList = new ArrayList<>();
 
-    public int getRegionID() {
-        return regionID;
-    }
-
-    public void setRegionID(int regionID) {
-        this.regionID = regionID;
-    }
-
-    public String getRegionDescription() {
-        return regionDescription;
-    }
-
-    public void setRegionDescription(String regionDescription) {
-        this.regionDescription = regionDescription;
-    }
 }

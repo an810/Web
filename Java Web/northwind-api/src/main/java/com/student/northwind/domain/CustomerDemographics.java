@@ -1,9 +1,16 @@
 package com.student.northwind.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "CustomerDemographics")
+@Getter
+@Setter
 public class CustomerDemographics {
     @Id
     @Column(name = "CustomerTypeID")
@@ -12,22 +19,7 @@ public class CustomerDemographics {
     @Column(name = "CustomerDesc")
     private String customerDesc;
 
-    public CustomerDemographics() {
-    }
+    @OneToMany(mappedBy = "cusomterDemographics")
+    private List<CustomerCustomerDemo> customerCustomerDemoList = new ArrayList<>();
 
-    public int getCustomerTypeID() {
-        return customerTypeID;
-    }
-
-    public void setCustomerTypeID(int customerTypeID) {
-        this.customerTypeID = customerTypeID;
-    }
-
-    public String getCustomerDesc() {
-        return customerDesc;
-    }
-
-    public void setCustomerDesc(String customerDesc) {
-        this.customerDesc = customerDesc;
-    }
 }
