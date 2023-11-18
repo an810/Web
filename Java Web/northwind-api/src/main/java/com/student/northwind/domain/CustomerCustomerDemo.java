@@ -17,6 +17,7 @@ public class CustomerCustomerDemo {
 //    @Column(name = "CustomerTypeID")
 //    private int customerTypeID;
     @ManyToOne
+    @Id
     @JoinColumn(name = "CustomerTypeID", referencedColumnName = "CustomerTypeID")
     private CustomerDemographics customerDemographics;
 

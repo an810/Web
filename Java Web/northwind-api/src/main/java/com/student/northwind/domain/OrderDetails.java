@@ -12,9 +12,9 @@ import javax.persistence.*;
 @Getter
 @Setter
 public class OrderDetails {
-//    @Id
-//    @Column(name = "OrderID")
-//    private int orderID;
+    @Id
+    @Column(name = "OrderID")
+    private int orderID;
 //    @Column(name = "ProductID")
 //    private int productID;
     @Column(name = "UnitPrice")
@@ -24,10 +24,10 @@ public class OrderDetails {
     @Column(name = "Discount")
     private double discount;
 
-    @ManyToOne
-    @Id
-    @JoinColumn(name = "OrderID", referencedColumnName = "OrderID")
-    private Orders order;
+//    @ManyToOne
+//    @Id
+//    @JoinColumn(name = "OrderID", referencedColumnName = "OrderID")
+//    private Orders order;
 
     @ManyToOne
     @JoinColumn(name = "ProductID", referencedColumnName = "ProductID")

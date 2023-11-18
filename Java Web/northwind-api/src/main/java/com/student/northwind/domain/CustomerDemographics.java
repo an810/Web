@@ -19,7 +19,7 @@ public class CustomerDemographics {
     @Column(name = "CustomerDesc")
     private String customerDesc;
 
-    @OneToMany(mappedBy = "cusomterDemographics")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "cusomterDemographics")
     private List<CustomerCustomerDemo> customerCustomerDemoList = new ArrayList<>();
 
 }

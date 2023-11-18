@@ -63,13 +63,13 @@ public class Employees {
     )
     private List<Territories> territoriesList = new ArrayList<>();
 
-    @OneToMany(mappedBy = "employees")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "employees")
     private List<Employees> employeesList = new ArrayList<>();
 
     @ManyToOne
     private Employees employees;
 
-    @OneToMany(mappedBy = "employee")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "employee")
     private List<Orders> ordersList = new ArrayList<>();
 
 }

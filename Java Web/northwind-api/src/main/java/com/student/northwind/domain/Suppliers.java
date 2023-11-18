@@ -39,7 +39,7 @@ public class Suppliers {
     @Column(name = "HomePage")
     private String homePage;
 
-    @OneToMany(mappedBy = "supplier")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "supplier")
     private List<Products> productsList = new ArrayList<>();
 
 }

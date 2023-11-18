@@ -59,6 +59,6 @@ public class Orders {
     @JoinColumn(name = "CustomerID", referencedColumnName = "CustomerID")
     private Customers customer;
 
-    @OneToMany(mappedBy = "order")
-    private List<OrderDetails> orderDetailsList = new ArrayList<>();
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "order")
+//    private List<OrderDetails> orderDetailsList = new ArrayList<>();
 }

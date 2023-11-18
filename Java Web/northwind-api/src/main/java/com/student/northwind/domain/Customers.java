@@ -39,9 +39,9 @@ public class Customers {
     @Column(name = "Fax")
     private String fax;
 
-    @OneToMany(mappedBy = "customers")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "customers")
     private List<CustomerCustomerDemo> customerCustomerDemoList = new ArrayList<>();
 
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer")
     private List<Orders> ordersList = new ArrayList<>();
 }

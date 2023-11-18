@@ -19,7 +19,7 @@ public class Region {
     @Column(name = "RegionDescription")
     private String regionDescription;
 
-    @OneToMany(mappedBy = "region")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "region")
     private List<Territories> territoriesList = new ArrayList<>();
 
 }

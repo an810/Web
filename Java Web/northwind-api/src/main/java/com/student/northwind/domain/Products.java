@@ -35,7 +35,7 @@ public class Products {
     @Column(name = "Discontinued")
     private int discontinued;
 
-    @OneToMany(mappedBy = "product")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
     private List<OrderDetails> orderDetailsList = new ArrayList<>();
 
     @ManyToOne

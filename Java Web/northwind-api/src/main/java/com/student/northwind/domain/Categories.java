@@ -23,6 +23,6 @@ public class Categories {
     @Column(name = "Picture")
     private String picture;
 
-    @OneToMany(mappedBy = "category")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "category")
     private List<Products> productsList = new ArrayList<>();
 }

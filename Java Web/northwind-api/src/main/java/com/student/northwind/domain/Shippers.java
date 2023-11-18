@@ -21,7 +21,7 @@ public class Shippers {
     @Column(name = "Phone")
     private String phone;
 
-    @OneToMany(mappedBy = "shippers")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "shippers")
     private List<Orders> ordersList = new ArrayList<>();
 
 
